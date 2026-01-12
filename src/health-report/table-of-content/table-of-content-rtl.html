@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Report - Table of Contents (RTL)</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Table of Contents Specific Styles - RTL */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap");
+
+      .table-of-content-page {
+        width: 595px;
+        min-height: 842px;
+        background-color: #f0f2ff;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .toc-header {
+        background-color: #f0f2ff;
+        padding: 40px 68px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .toc-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        flex-direction: row-reverse;
+      }
+
+      .toc-header-left {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .toc-header-title {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #14142b;
+        white-space: nowrap;
+      }
+
+      .toc-header-subtitle {
+        display: flex;
+        gap: 4px;
+        align-items: flex-start;
+        font-size: 12px;
+        line-height: 18px;
+        flex-direction: row-reverse;
+      }
+
+      .toc-subtitle-text {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        color: #43476b;
+      }
+
+      .toc-subtitle-name {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 600;
+        color: #14142b;
+      }
+
+      .toc-header-logo {
+        width: 88px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+
+      .toc-header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .toc-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #d8d9e8;
+      }
+
+      .toc-content {
+        flex: 1;
+        padding: 24px 68px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .toc-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .toc-item-header {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+
+      .toc-item-title {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #2f324b;
+        white-space: nowrap;
+        letter-spacing: -0.5px;
+        flex-shrink: 0;
+        text-align: right;
+      }
+
+      .toc-item-dots {
+        flex: 1;
+        height: 0;
+        border-top: 1px dotted #989abe;
+        min-width: 0;
+      }
+
+      .toc-item-page {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+        padding-bottom: 3px;
+        flex-shrink: 0;
+        flex-direction: row-reverse;
+      }
+
+      .toc-page-text {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 1.4;
+        color: #666a9f;
+        white-space: nowrap;
+        letter-spacing: -0.088px;
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+
+      .toc-page-arrow {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+        transform: scaleX(-1);
+      }
+
+      .toc-page-arrow svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .toc-item-description {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #4e547d;
+        text-align: right;
+      }
+
+      .toc-footer {
+        background-color: #f0f2ff;
+        padding: 26px 68px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+
+      .toc-footer-date {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .toc-footer-page {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #4e547d;
+        white-space: nowrap;
+        display: flex;
+        gap: 3px;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-of-content-page" dir="rtl">
+      <div class="toc-header">
+        <div class="toc-header-content">
+          <div class="toc-header-left">
+            <p class="toc-header-title">تقرير الصحة</p>
+            <div class="toc-header-subtitle">
+              <p class="toc-subtitle-name" id="toc-patient-name">Ian H. Pham</p>
+              <p class="toc-subtitle-text">تقرير الصحة لـ</p>
+            </div>
+          </div>
+          <div class="toc-header-logo">
+            <img src="../../assets/elfie-logo.svg" alt="Elfie Logo" />
+          </div>
+        </div>
+        <div class="toc-divider"></div>
+      </div>
+      <div class="toc-content">
+        <div class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-item-page">
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="toc-page-text">
+                <span id="toc-page-1">2</span>
+                <span>صفحة</span>
+              </div>
+            </div>
+            <div class="toc-item-dots"></div>
+            <p class="toc-item-title">1. الملخص والأسئلة</p>
+          </div>
+          <p class="toc-item-description">
+            تفسير سريري عالي المستوى يسلط الضوء على الأولويات والمخاطر والأسئلة التي تتطلب الاهتمام.
+          </p>
+        </div>
+        <div class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-item-page">
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="toc-page-text">
+                <span id="toc-page-2">5</span>
+                <span>صفحة</span>
+              </div>
+            </div>
+            <div class="toc-item-dots"></div>
+            <p class="toc-item-title">2. الملف الطبي</p>
+          </div>
+          <p class="toc-item-description">
+            نظرة شاملة على التشخيصات والتاريخ والرعاية الوقائية والعوامل الصحية الأساسية.
+          </p>
+        </div>
+        <div class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-item-page">
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="toc-page-text">
+                <span id="toc-page-3">10</span>
+                <span>صفحة</span>
+              </div>
+            </div>
+            <div class="toc-item-dots"></div>
+            <p class="toc-item-title">3. الأدوية</p>
+          </div>
+          <p class="toc-item-description">
+            نظرة واضحة على العلاجات الحالية والسابقة ودقة الجرعات وأنماط الالتزام والمبرر العلاجي.
+          </p>
+        </div>
+        <div class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-item-page">
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="toc-page-text">
+                <span id="toc-page-4">24</span>
+                <span>صفحة</span>
+              </div>
+            </div>
+            <div class="toc-item-dots"></div>
+            <p class="toc-item-title">4. نمط الحياة والعافية والسلوكيات</p>
+          </div>
+          <p class="toc-item-description">
+            نظرة موضوعية على العادات والسلوكيات التي تؤثر على المخاطر السريرية والصحة الأيضية والرفاهية العامة.
+          </p>
+        </div>
+        <div class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-item-page">
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="toc-page-text">
+                <span id="toc-page-5">13</span>
+                <span>صفحة</span>
+              </div>
+            </div>
+            <div class="toc-item-dots"></div>
+            <p class="toc-item-title">5. وظائف الجسم والأعراض</p>
+          </div>
+          <p class="toc-item-description">
+            ملخص أداء أجهزة الأعضاء الذي يدمج العلامات الحيوية ونتائج المختبرات والمؤشرات الوظيفية والأعراض.
+          </p>
+        </div>
+        <div class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-item-page">
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="toc-page-text">
+                <span id="toc-page-6">26</span>
+                <span>صفحة</span>
+              </div>
+            </div>
+            <div class="toc-item-dots"></div>
+            <p class="toc-item-title">6. الأمراض المعدية والفحوصات</p>
+          </div>
+          <p class="toc-item-description">
+            حالة الكشف الحالية للحالات الفيروسية المحددة، بما في ذلك فحوصات فيروس نقص المناعة البشرية والتهاب الكبد.
+          </p>
+        </div>
+        <div class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-item-page">
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="toc-page-text">
+                <span id="toc-page-7">30</span>
+                <span>صفحة</span>
+              </div>
+            </div>
+            <div class="toc-item-dots"></div>
+            <p class="toc-item-title">7. الأورام والفحوصات</p>
+          </div>
+          <p class="toc-item-description">
+            تتبع اتجاهات علامات الورم جنبًا إلى جنب مع البيانات المتعلقة بعلاجات السرطان النشطة أو التاريخية.
+          </p>
+        </div>
+      </div>
+      <div class="toc-footer">
+        <div class="toc-footer-page">
+          <span id="toc-total-pages">33</span>
+          <span>من</span>
+          <span id="toc-current-page">1</span>
+          <span>صفحة</span>
+        </div>
+        <p class="toc-footer-date" id="toc-footer-date">
+          07 ديسمبر 2025 • للاستخدام الشخصي فقط
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

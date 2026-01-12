@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Report - Table of Contents</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Table of Contents Specific Styles */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap");
+
+      .table-of-content-page {
+        width: 595px;
+        min-height: 842px;
+        background-color: #f0f2ff;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .toc-header {
+        background-color: #f0f2ff;
+        padding: 40px 68px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .toc-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .toc-header-left {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+      }
+
+      .toc-header-title {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #14142b;
+        white-space: nowrap;
+      }
+
+      .toc-header-subtitle {
+        display: flex;
+        gap: 4px;
+        align-items: flex-start;
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      .toc-subtitle-text {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        color: #43476b;
+      }
+
+      .toc-subtitle-name {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 600;
+        color: #14142b;
+      }
+
+      .toc-header-logo {
+        width: 88px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+
+      .toc-header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .toc-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #d8d9e8;
+      }
+
+      .toc-content {
+        flex: 1;
+        padding: 24px 68px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .toc-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .toc-item-header {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .toc-item-header:hover {
+        opacity: 0.8;
+      }
+
+      .toc-item-header:visited {
+        color: inherit;
+      }
+
+      .toc-item-title {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #2f324b;
+        white-space: nowrap;
+        letter-spacing: -0.5px;
+        flex-shrink: 0;
+      }
+
+      .toc-item-dots {
+        flex: 1;
+        height: 0;
+        border-top: 1px dotted #989abe;
+        min-width: 0;
+      }
+
+      .toc-item-page {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+        padding-bottom: 3px;
+        flex-shrink: 0;
+      }
+
+      .toc-page-text {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 1.4;
+        color: #666a9f;
+        white-space: nowrap;
+        letter-spacing: -0.088px;
+        display: flex;
+        gap: 2px;
+        align-items: center;
+      }
+
+      .toc-page-arrow {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+      }
+
+      .toc-page-arrow svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .toc-item-description {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #4e547d;
+      }
+
+      .toc-footer {
+        background-color: #f0f2ff;
+        padding: 26px 68px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .toc-footer-date {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+        white-space: nowrap;
+      }
+
+      .toc-footer-page {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #4e547d;
+        white-space: nowrap;
+        display: flex;
+        gap: 3px;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-of-content-page" dir="ltr">
+      <div class="toc-header">
+        <div class="toc-header-content">
+          <div class="toc-header-left">
+            <p class="toc-header-title">Health Report</p>
+            <div class="toc-header-subtitle">
+              <p class="toc-subtitle-text">Health report of</p>
+              <p class="toc-subtitle-name" id="toc-patient-name">Ian H. Pham</p>
+            </div>
+          </div>
+          <div class="toc-header-logo">
+            <img src="../../assets/elfie-logo.svg" alt="Elfie Logo" />
+          </div>
+        </div>
+        <div class="toc-divider"></div>
+      </div>
+      <div class="toc-content">
+        <div class="toc-item">
+          <a href="#page-2" class="toc-item-header">
+            <p class="toc-item-title">1. Summary & Questions</p>
+            <div class="toc-item-dots"></div>
+            <div class="toc-item-page">
+              <div class="toc-page-text">
+                <span>Page</span>
+                <span id="toc-page-1">2</span>
+              </div>
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <p class="toc-item-description">
+            High-level clinical interpretation highlighting priorities, risks, and questions requiring attention.
+          </p>
+        </div>
+        <div class="toc-item">
+          <a href="#page-5" class="toc-item-header">
+            <p class="toc-item-title">2. Medical Profile</p>
+            <div class="toc-item-dots"></div>
+            <div class="toc-item-page">
+              <div class="toc-page-text">
+                <span>Page</span>
+                <span id="toc-page-2">5</span>
+              </div>
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <p class="toc-item-description">
+            Comprehensive snapshot of diagnoses, history, preventive care, and baseline health determinants.
+          </p>
+        </div>
+        <div class="toc-item">
+          <a href="#page-10" class="toc-item-header">
+            <p class="toc-item-title">3. Medications</p>
+            <div class="toc-item-dots"></div>
+            <div class="toc-item-page">
+              <div class="toc-page-text">
+                <span>Page</span>
+                <span id="toc-page-3">10</span>
+              </div>
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <p class="toc-item-description">
+            Clear view of current and past treatments, dosing accuracy, adherence patterns, and therapeutic rationale.
+          </p>
+        </div>
+        <div class="toc-item">
+          <a href="#page-24" class="toc-item-header">
+            <p class="toc-item-title">4. Lifestyle, Wellness & Behaviors</p>
+            <div class="toc-item-dots"></div>
+            <div class="toc-item-page">
+              <div class="toc-page-text">
+                <span>Page</span>
+                <span id="toc-page-4">24</span>
+              </div>
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <p class="toc-item-description">
+            Objective view of habits and behaviors influencing clinical risk, metabolic health, and overall wellbeing.
+          </p>
+        </div>
+        <div class="toc-item">
+          <a href="#page-13" class="toc-item-header">
+            <p class="toc-item-title">5. Body Functions & Symptoms</p>
+            <div class="toc-item-dots"></div>
+            <div class="toc-item-page">
+              <div class="toc-page-text">
+                <span>Page</span>
+                <span id="toc-page-5">13</span>
+              </div>
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <p class="toc-item-description">
+            Organ-system performance summary integrating vitals, labs results, functional indicators, and symptoms.
+          </p>
+        </div>
+        <div class="toc-item">
+          <a href="#page-26" class="toc-item-header">
+            <p class="toc-item-title">6. Infectious Diseases & Screening</p>
+            <div class="toc-item-dots"></div>
+            <div class="toc-item-page">
+              <div class="toc-page-text">
+                <span>Page</span>
+                <span id="toc-page-6">26</span>
+              </div>
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <p class="toc-item-description">
+            Current detection status for specific viral conditions, including HIV and Hepatitis screenings.
+          </p>
+        </div>
+        <div class="toc-item">
+          <a href="#page-30" class="toc-item-header">
+            <p class="toc-item-title">7. Oncology & Screening</p>
+            <div class="toc-item-dots"></div>
+            <div class="toc-item-page">
+              <div class="toc-page-text">
+                <span>Page</span>
+                <span id="toc-page-7">30</span>
+              </div>
+              <div class="toc-page-arrow">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="arrow-right">
+                    <path id="Vector" d="M7.215 9.41C7.12 9.41 7.025 9.375 6.95 9.3C6.805 9.155 6.805 8.915 6.95 8.77L9.72 6L6.95 3.23C6.805 3.085 6.805 2.845 6.95 2.7C7.095 2.555 7.335 2.555 7.48 2.7L10.515 5.735C10.66 5.88 10.66 6.12 10.515 6.265L7.48 9.3C7.405 9.375 7.31 9.41 7.215 9.41Z" fill="#989ABE"/>
+                    <path id="Vector_2" d="M10.165 6.375H1.75C1.545 6.375 1.375 6.205 1.375 6C1.375 5.795 1.545 5.625 1.75 5.625H10.165C10.37 5.625 10.54 5.795 10.54 6C10.54 6.205 10.37 6.375 10.165 6.375Z" fill="#989ABE"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <p class="toc-item-description">
+            Tracking of tumor marker trends alongside data related to active or historical cancer therapies.
+          </p>
+        </div>
+      </div>
+      <div class="toc-footer">
+        <p class="toc-footer-date" id="toc-footer-date">
+          07 December 2025 • For Personal Use Only
+        </p>
+        <div class="toc-footer-page">
+          <span>Page</span>
+          <span id="toc-current-page">1</span>
+          <span>of</span>
+          <span id="toc-total-pages">33</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
