@@ -1,0 +1,497 @@
+/* Import Noto Sans and Inter fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+    /* Colors */
+    --color-white: #FFFFFF;
+    --color-black: #14142B;
+    --color-primary: #FF0283;
+    --color-grey-1000: #14142B;
+    --color-grey-900: #2F324B;
+    --color-grey-800: #43476B;
+    --color-grey-700: #4E547D;
+    --color-grey-600: #7D7FAD;
+    --color-divider: #D8D9E8;
+    --color-border: #C0C1D8;
+    --color-green: #00A65F;
+    
+    /* Chart Colors */
+    --color-anxiety: #E54C8C;
+    --color-mobility: #3366FF;
+    --color-social: #33D4CC;
+    --color-selfcare: #FFB830;
+    --color-pain: #F27171;
+    --color-finance: #7DD976;
+    
+    /* Spacing */
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-40: 40px;
+    --spacing-68: 68px;
+    
+    /* Border Radius */
+    --radius-12: 12px;
+    --radius-24: 24px;
+    --radius-round: 28.526px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-grey-1000);
+    line-height: 1.4;
+}
+
+.health-report {
+    max-width: 595px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--color-white);
+    padding: 40px var(--spacing-68) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-grey-1000);
+}
+
+.header-subtitle {
+    display: flex;
+    gap: var(--spacing-4);
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.subtitle-text {
+    color: var(--color-grey-800);
+    font-weight: 400;
+}
+
+.subtitle-name {
+    color: var(--color-grey-1000);
+    font-weight: 600;
+}
+
+.header-logo {
+    width: 88px;
+    height: 32px;
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-divider);
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: var(--spacing-24) var(--spacing-68);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-40);
+}
+
+/* Section Styles */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio-age-icon {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+}
+
+.sun-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-grey-900);
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-divider);
+    border-left-width: 2px;
+    border-radius: var(--radius-12);
+    padding: var(--spacing-16);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+}
+
+.data-row {
+    display: flex;
+    gap: var(--spacing-24);
+}
+
+.data-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.676px;
+    padding: 2px 6px;
+    background-color: var(--color-white);
+    border: 0.334px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-12);
+    backdrop-filter: blur(8.027px);
+    width: fit-content;
+}
+
+.arrow-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.badge-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--color-grey-700);
+    white-space: nowrap;
+}
+
+.data-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--color-grey-700);
+}
+
+.data-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-grey-900);
+    letter-spacing: -0.112px;
+}
+
+.data-value.positive {
+    color: var(--color-green);
+}
+
+.accuracy-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--color-grey-700);
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.footer-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.footer-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-grey-1000);
+    letter-spacing: -0.096px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+}
+
+.link-text {
+    font-size: 11px;
+    color: var(--color-grey-600);
+    text-decoration: underline;
+}
+
+.link-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.footer-description {
+    font-size: 11px;
+    color: var(--color-grey-700);
+    line-height: 1.4;
+}
+
+/* Chart Styles */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-16) 0;
+}
+
+.quality-of-life-chart {
+    width: 150.269px;
+    height: 150.269px;
+    border-radius: 50%;
+    position: relative;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+    
+    /* Base: white background that shows through as borders */
+    background: white;
+}
+
+/* Colored segments layer with white gaps for borders */
+.quality-of-life-chart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    
+    /* Donut chart segments with white borders (~0.6% each) */
+    /* Values: Anxiety 50, Mobility 80, Social 50, Self-care 80, Pain 65, Finance 75 */
+    background: conic-gradient(
+        from -90deg,
+        #FF47AC 0% 12.2%,           /* Anxiety: 50 (Pink) */
+        white 12.2% 12.8%,          /* Border */
+        #264BC7 12.8% 32.2%,        /* Mobility: 80 (Blue) */
+        white 32.2% 32.8%,          /* Border */
+        #33CFFF 32.8% 44.7%,        /* Social: 50 (Cyan) */
+        white 44.7% 45.3%,          /* Border */
+        #FFBE0A 45.3% 64.7%,        /* Self-care: 80 (Orange/Yellow) */
+        white 64.7% 65.3%,          /* Border */
+        #FF6D6B 65.3% 80.9%,        /* Pain: 65 (Coral) */
+        white 80.9% 81.5%,          /* Border */
+        #33DE9F 81.5% 99.4%,        /* Finance: 75 (Green) */
+        white 99.4% 100%             /* Border to close */
+    );
+    
+    /* Mask to create donut hole - inner ~42% is transparent for proper donut shape */
+    mask: radial-gradient(circle, transparent 42%, black 42%);
+    -webkit-mask: radial-gradient(circle, transparent 42%, black 42%);
+}
+
+/* Create donut hole (center circle) */
+.quality-of-life-chart::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 42%;
+    height: 42%;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.chart-labels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.chart-label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 2.667px;
+    padding: 4px 6px;
+    background-color: var(--color-white);
+    border: 0.255px solid var(--color-border);
+    border-radius: var(--radius-round);
+    white-space: nowrap;
+    pointer-events: auto;
+}
+
+.label-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.label-text {
+    font-size: 9px;
+    color: var(--color-grey-700);
+}
+
+/* Label Positioning */
+.label-anxiety {
+    top: 8px;
+    left: 50%;
+    transform: translateX(-120%);
+}
+
+.label-mobility {
+    top: 8px;
+    right: 50%;
+    transform: translateX(120%);
+}
+
+.label-social {
+    top: 70px;
+    right: 0;
+    transform: translateX(10%);
+}
+
+.label-selfcare {
+    top: 70px;
+    left: 0;
+    transform: translateX(-10%);
+}
+
+.label-pain {
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-120%);
+}
+
+.label-finance {
+    bottom: 8px;
+    right: 50%;
+    transform: translateX(120%);
+}
+
+.stats-row {
+    margin-top: var(--spacing-8);
+}
+
+.stat-with-icon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.arrow-icon-sm {
+    width: 15px;
+    height: 15px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--color-white);
+    padding: 26px var(--spacing-68) 32px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-date {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-grey-800);
+}
+
+.footer-page {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-grey-800);
+}
+
+.page-current,
+.page-total {
+    color: var(--color-grey-700);
+}
+
+/* Responsive adjustments */
+@media (max-width: 595px) {
+    .header,
+    .content,
+    .footer {
+        padding-left: var(--spacing-24);
+        padding-right: var(--spacing-24);
+    }
+    
+    .chart-container {
+        height: 180px;
+    }
+    
+    .chart-label {
+        font-size: 8px;
+        padding: 3px 5px;
+    }
+}

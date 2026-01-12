@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Report - Ian H. Pham</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="health-report">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="header-title">Health Report</h1>
+                    <div class="header-subtitle">
+                        <span class="subtitle-text">Health report of</span>
+                        <span class="subtitle-name">Ian H. Pham</span>
+                    </div>
+                </div>
+                <div class="header-logo">
+                    <img src="../assets/elfie-logo.svg" alt="Elfie Logo" class="logo-image">
+                </div>
+            </div>
+            <div class="divider"></div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Biological Age Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="icon-wrapper">
+                        <div class="bio-age-icon"></div>
+                    </div>
+                    <h2 class="section-title">Biological Age</h2>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="data-row">
+                            <div class="data-column">
+                                <div class="status-badge">
+                                    <img src="../assets/health-report/arrow-down.svg" alt="Arrow Down" class="arrow-icon">
+                                    <span class="badge-text">3.4 years younger</span>
+                                </div>
+                                <p class="data-value">35.2 years old</p>
+                            </div>
+                            <div class="data-column">
+                                <p class="data-label">Pace of ageing</p>
+                                <p class="data-value">0.95x</p>
+                            </div>
+                        </div>
+                        <p class="accuracy-text">Accuracy - 49% Medium</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="footer-header">
+                            <span class="footer-title">Built on science</span>
+                            <a href="#" class="footer-link">
+                                <span class="link-text">View publication</span>
+                                <img src="../assets/health-report/arrow-right.svg" alt="Arrow Right" class="link-icon">
+                            </a>
+                        </div>
+                        <p class="footer-description">
+                            The Biological Age is built on more than two decades of global research, drawing on data from over 28 million adults in 195 countries.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quality of Life Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="icon-wrapper">
+                        <img src="../assets/health-report/sun-icon.png" alt="Quality of Life" class="sun-icon">
+                    </div>
+                    <h2 class="section-title">Quality of life</h2>
+                </div>
+                <div class="card">
+                    <div class="chart-container">
+                        <div class="quality-of-life-chart" id="qualityOfLifeChart"></div>
+                        
+                        <!-- Chart Labels positioned around the chart -->
+                        <div class="chart-labels">
+                            <div class="chart-label label-anxiety">
+                                <img src="../assets/health-report/mental.png" alt="Mental" class="label-icon">
+                                <span class="label-text">Anxiety - 50%</span>
+                            </div>
+                            <div class="chart-label label-mobility">
+                                <img src="../assets/health-report/mobility.png" alt="Mobility" class="label-icon">
+                                <span class="label-text">Mobility - 80%</span>
+                            </div>
+                            <div class="chart-label label-social">
+                                <img src="../assets/health-report/social.png" alt="Social" class="label-icon">
+                                <span class="label-text">Social - 50%</span>
+                            </div>
+                            <div class="chart-label label-selfcare">
+                                <img src="../assets/health-report/self-care.png" alt="Self Care" class="label-icon">
+                                <span class="label-text">Self-care - 80%</span>
+                            </div>
+                            <div class="chart-label label-pain">
+                                <img src="../assets/health-report/pain.png" alt="Pain" class="label-icon">
+                                <span class="label-text">Pain - 65%</span>
+                            </div>
+                            <div class="chart-label label-finance">
+                                <img src="../assets/health-report/finance.png" alt="Finance" class="label-icon">
+                                <span class="label-text">Finance - 75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-row stats-row">
+                        <div class="data-column">
+                            <p class="data-label">Score</p>
+                            <p class="data-value">77%</p>
+                        </div>
+                        <div class="data-column">
+                            <p class="data-label">Since start</p>
+                            <div class="stat-with-icon">
+                                <img src="../assets/health-report/arrow-up.svg" alt="Arrow Up" class="arrow-icon-sm">
+                                <p class="data-value positive">13%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="footer-header">
+                            <span class="footer-title">About Quality of Life</span>
+                            <a href="#" class="footer-link">
+                                <span class="link-text">EuroQoL</span>
+                                <img src="../assets/health-report/arrow-right.svg" alt="Arrow Right" class="link-icon">
+                            </a>
+                        </div>
+                        <p class="footer-description">
+                            The Elfie QoL Score covers the 5 key dimensions of the EuroQoL 5D-5L (mobility, self-care, social activities, pain, and anxiety) and adds a 6th dimension (financial burden).
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-date">2026-12-04 • For Personal Use Only</p>
+                <p class="footer-page">Page <span class="page-current">7</span> of <span class="page-total">33</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="chart.js"></script>
+</body>
+</html>

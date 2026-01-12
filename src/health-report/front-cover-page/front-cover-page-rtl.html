@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Report - Cover Page (RTL)</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Cover Page Specific Styles */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700;900&display=swap");
+
+      .cover-page {
+        width: 595px;
+        min-height: 842px;
+        background-color: #f0f2ff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .cover-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 153px 69px 16px;
+        gap: 24px;
+        width: 100%;
+      }
+
+      .cover-header {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-end;
+      }
+
+      .elfie-logo-container {
+        height: 64px;
+        width: 176px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .elfie-logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .cover-title {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: normal;
+        color: #14142b;
+        text-transform: capitalize;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .cover-title p {
+        margin: 0;
+      }
+
+      .profile-box {
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 24px;
+        width: 457px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .profile-header {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
+
+      .profile-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 9999px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .profile-avatar-bg {
+        position: absolute;
+        inset: 0;
+        background-color: #f7f7fc;
+        border-radius: 9999px;
+      }
+
+      .profile-avatar img {
+        position: absolute;
+        left: 0;
+        top: 6.95%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .profile-label {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #666a9f;
+        letter-spacing: -0.112px;
+      }
+
+      .profile-name {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 1.2;
+        color: #14142b;
+        letter-spacing: -0.5px;
+      }
+
+      .profile-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .profile-detail-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        width: 100%;
+        flex-direction: row-reverse;
+      }
+
+      .profile-detail-label-group {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-shrink: 0;
+        flex-direction: row-reverse;
+      }
+
+      .profile-detail-icon {
+        width: 32px;
+        height: 32px;
+        background-color: #f0f2ff;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .profile-detail-icon img {
+        width: 16px;
+        height: 16px;
+      }
+
+      .profile-detail-label {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #666a9f;
+        letter-spacing: -0.112px;
+        width: 120px;
+        text-align: right;
+      }
+
+      .profile-detail-value {
+        flex: 1;
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        color: #14142b;
+        min-width: 0;
+        text-align: right;
+      }
+
+      .profile-divider {
+        height: 0;
+        width: 100%;
+        border-top: 1px dashed #d8d9e8;
+      }
+
+      .cover-footer {
+        padding: 26px 68px 32px;
+        width: 100%;
+      }
+
+      .cover-footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .cover-footer-text {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+        white-space: nowrap;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover-page" dir="rtl">
+      <div class="cover-content">
+        <div class="cover-header">
+          <div class="elfie-logo-container">
+            <img src="../../assets/elfie-logo.svg" alt="Elfie Logo Background" />
+          </div>
+          <div class="cover-title" dir="auto">
+            <p>تقرير الصحة</p>
+          </div>
+        </div>
+        <div class="profile-box">
+          <div class="profile-header">
+            <div class="profile-info">
+              <p class="profile-label" dir="auto">مستعد لـ</p>
+              <p class="profile-name" id="profile-name">ian H. Pham</p>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="profile-detail-row">
+              <p class="profile-detail-value" id="profile-gender" dir="auto">أنثى</p>
+              <div class="profile-detail-label-group">
+                <p class="profile-detail-label" dir="auto">الجنس البيولوجي</p>
+                <div class="profile-detail-icon">
+                  <img
+                    src="../../assets/health-report/icon-profile.svg"
+                    alt="Biological Sex Icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="profile-divider"></div>
+            <div class="profile-detail-row">
+              <p class="profile-detail-value" id="profile-country" dir="auto">فيتنام</p>
+              <div class="profile-detail-label-group">
+                <p class="profile-detail-label" dir="auto">البلد</p>
+                <div class="profile-detail-icon">
+                  <img
+                    src="../../assets/health-report/icon-location.svg"
+                    alt="Location Icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="profile-divider"></div>
+            <div class="profile-detail-row">
+              <p class="profile-detail-value" id="profile-birth-year">1965</p>
+              <div class="profile-detail-label-group">
+                <p class="profile-detail-label" dir="auto">سنة الميلاد</p>
+                <div class="profile-detail-icon">
+                  <img
+                    src="../../assets/health-report/icon-cake.svg"
+                    alt="Birthday Icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="profile-divider"></div>
+            <div class="profile-detail-row">
+              <p class="profile-detail-value" id="profile-report-period" dir="auto">
+                1 يناير – 31 مارس 2025
+              </p>
+              <div class="profile-detail-label-group">
+                <p class="profile-detail-label" dir="auto">فترة التقرير</p>
+                <div class="profile-detail-icon">
+                  <img
+                    src="../../assets/health-report/icon-calendar.svg"
+                    alt="Calendar Icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-footer">
+        <div class="cover-footer-content">
+          <p class="cover-footer-text" dir="auto" id="cover-footer-text">
+            07 ديسمبر 2025 • للاستخدام الشخصي فقط
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
