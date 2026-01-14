@@ -14,11 +14,19 @@ This build script automatically embeds all assets (SVGs and PNGs) directly into 
 ### Run the Build Script
 
 ```bash
-# From project root
+# Build all templates
 npm run build:embed
 
+# Build specific directory
+npm run build:cover        # Front cover pages only
+npm run build:toc          # Table of contents only
+npm run build:section1     # Section 1 only
+npm run build:index        # Index.html only
+
 # Or directly with Node.js
-node src/health-report/build-embedded.js
+node src/health-report/build-embedded.js                    # All files
+node src/health-report/build-embedded.js front-cover-page/  # Specific directory
+node src/health-report/build-embedded.js index.html         # Specific file
 ```
 
 ### Watch Mode (Auto-rebuild on changes)
@@ -29,6 +37,22 @@ npm install
 
 # Run in watch mode
 npm run build:embed:watch
+```
+
+### Command Line Options
+
+```bash
+# Show help
+node src/health-report/build-embedded.js --help
+
+# Process specific paths
+node src/health-report/build-embedded.js [path]
+
+# Examples:
+node src/health-report/build-embedded.js                              # All files
+node src/health-report/build-embedded.js front-cover-page/            # Directory
+node src/health-report/build-embedded.js index.html                   # Single file
+node src/health-report/build-embedded.js front-cover-page/front-cover-page.html
 ```
 
 ## 📁 Output

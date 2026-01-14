@@ -8,8 +8,14 @@
 # Navigate to project directory
 cd /Users/thongdam/Documents/pdf-generator-template
 
-# Run the build script
+# Build all templates
 npm run build:embed
+
+# Or build specific templates only
+npm run build:cover     # Front cover pages
+npm run build:toc       # Table of contents
+npm run build:section1  # Section 1
+npm run build:index     # Index page only
 ```
 
 **Output:**

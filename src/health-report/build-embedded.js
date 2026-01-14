@@ -275,6 +275,76 @@ function findHtmlFiles(dir, fileList = []) {
   return fileList;
 }
 
+// Parse command line arguments
+function parseArgs() {
+  const args = process.argv.slice(2);
+  
+  // Show help if requested
+  if (args.includes('-h') || args.includes('--help')) {
+    console.log(`
+Asset Embedding Build Script
+
+Usage:
+  node build-embedded.js [path]
+
+Arguments:
+  [path]        Optional. Specific file or directory to process
+                If omitted, processes all HTML files
+
+Examples:
+  node build-embedded.js                              # Process all files
+  node build-embedded.js front-cover-page/            # Process directory
+  node build-embedded.js index.html                   # Process single file
+  node build-embedded.js front-cover-page/front-cover-page.html
+
+Options:
+  -h, --help    Show this help message
+`);
+    process.exit(0);
+  }
+  
+  return args[0]; // Return the first argument (path) or undefined
+}
+
+// Validate and resolve target path
+function resolveTargetPath(targetPath) {
+  if (!targetPath) {
+    return BASE_DIR; // Default: process all files
+  }
+  
+  // Resolve relative to BASE_DIR
+  const resolvedPath = path.resolve(BASE_DIR, targetPath);
+  
+  // Check if path exists
+  if (!fs.existsSync(resolvedPath)) {
+    log(`❌ Error: Path not found: ${targetPath}`, 'red');
+    log(`   Resolved to: ${resolvedPath}\n`, 'red');
+    process.exit(1);
+  }
+  
+  return resolvedPath;
+}
+
+// Get HTML files from target path
+function getHtmlFilesFromTarget(targetPath) {
+  const stat = fs.statSync(targetPath);
+  
+  if (stat.isFile()) {
+    // Single file
+    if (!targetPath.endsWith('.html')) {
+      log(`❌ Error: File must be an HTML file: ${targetPath}`, 'red');
+      process.exit(1);
+    }
+    return [targetPath];
+  } else if (stat.isDirectory()) {
+    // Directory - find all HTML files
+    return findHtmlFiles(targetPath);
+  } else {
+    log(`❌ Error: Invalid path type: ${targetPath}`, 'red');
+    process.exit(1);
+  }
+}
+
 // Main execution
 function main() {
   log('\n╔═══════════════════════════════════════════════════════╗', 'bright');
@@ -284,8 +354,24 @@ function main() {
   
   const startTime = Date.now();
   
-  // Find all HTML files
-  const htmlFiles = findHtmlFiles(BASE_DIR);
+  // Parse command line arguments
+  const targetArg = parseArgs();
+  const targetPath = resolveTargetPath(targetArg);
+  
+  // Show what we're processing
+  if (targetArg) {
+    log(`Target: ${targetArg}`, 'cyan');
+  } else {
+    log(`Processing all files in health-report directory`, 'cyan');
+  }
+  
+  // Find HTML files from target
+  const htmlFiles = getHtmlFilesFromTarget(targetPath);
+  
+  if (htmlFiles.length === 0) {
+    log(`\n⚠️  No HTML files found in: ${targetArg || 'base directory'}`, 'yellow');
+    process.exit(0);
+  }
   
   log(`Found ${htmlFiles.length} HTML file(s) to process\n`, 'blue');
   

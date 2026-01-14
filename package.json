@@ -4,7 +4,11 @@
   "description": "Health Report PDF Generator with embedded assets",
   "scripts": {
     "build:embed": "node src/health-report/build-embedded.js",
-    "build:embed:watch": "nodemon --watch src/health-report --ext html,svg,png --exec 'npm run build:embed'"
+    "build:embed:watch": "nodemon --watch src/health-report --ext html,svg,png --exec 'npm run build:embed'",
+    "build:cover": "node src/health-report/build-embedded.js front-cover-page/",
+    "build:toc": "node src/health-report/build-embedded.js table-of-content/",
+    "build:section1": "node src/health-report/build-embedded.js section-1/",
+    "build:index": "node src/health-report/build-embedded.js index.html"
   },
   "keywords": [
     "pdf",
