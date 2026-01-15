@@ -154,6 +154,55 @@
             color: var(--text-muted);
         }
 
+        /* Tabs */
+        .tabs-container {
+            max-width: 560px;
+            margin: 40px auto;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            background: var(--search-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 6px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px 24px;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .tab-button:hover {
+            color: var(--text-primary);
+            background: var(--bg-card);
+        }
+
+        .tab-button.active {
+            color: var(--text-primary);
+            background: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         /* Template Grid */
         .templates-section {
             padding: 20px 0 80px;
@@ -491,6 +540,13 @@
             <p class="subtitle">Browse, preview, and select templates for PDF generation. Built with precision and care.</p>
         </header>
 
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="embedded">Embedded</button>
+                <button class="tab-button" data-tab="all">All Templates</button>
+            </div>
+        </div>
+
         <div class="search-wrapper">
             <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/>
@@ -510,12 +566,14 @@
         </div>
 
         <section class="templates-section">
-            <div class="section-header">
-                <h2 class="section-title">All Templates</h2>
-                <span class="template-count" id="templateCount">11 templates</span>
-            </div>
+            <!-- Embedded Templates Tab -->
+            <div class="tab-content active" id="embeddedTab">
+                <div class="section-header">
+                    <h2 class="section-title">Embedded Templates</h2>
+                    <span class="template-count" id="embeddedCount">15 templates</span>
+                </div>
 
-            <div id="templatesContainer">
+                <div id="embeddedContainer">
                 <!-- Root / index.html -->
                 <div class="template-group" data-section="root">
                     <div class="group-header">
@@ -882,17 +940,662 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- section-2/ -->
+                <div class="template-group" data-section="section-2">
+                    <div class="group-header">
+                        <h3 class="group-title">section-2/</h3>
+                        <span class="group-count">4 templates</span>
+                    </div>
+                    <div class="templates-grid">
+                        <a href="src/health-report/embedded/section-2/section-2-cover.html" class="template-card" data-search="section 2 cover medical profile demographics chronic conditions allergies family history biological age quality of life lab tests vaccination growth development" target="_blank" rel="noopener noreferrer">
+                            <div class="card-header">
+                                <div class="card-icon blue">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Section 2 Cover</h3>
+                                    <p class="card-path">src/health-report/embedded/section-2/section-2-cover.html</p>
+                                </div>
+                            </div>
+                            <p class="card-description">Medical profile cover page with section navigation, featuring demographics, chronic conditions, allergies, family history, biological age, quality of life, lab tests, vaccination, and growth & development sections.</p>
+                            <div class="card-tags">
+                                <span class="tag">Medical Profile</span>
+                                <span class="tag">Navigation</span>
+                                <span class="tag">LTR</span>
+                            </div>
+                            <div class="card-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"/>
+                                    <polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="src/health-report/embedded/section-2/section-2-cover-rtl.html" class="template-card" data-search="section 2 cover medical profile demographics chronic conditions allergies family history biological age quality of life lab tests vaccination growth development rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                            <div class="card-header">
+                                <div class="card-icon cyan">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="8" y1="13" x2="16" y2="13"/>
+                                        <line x1="8" y1="17" x2="16" y2="17"/>
+                                        <polyline points="14 9 15 9 16 9"/>
+                                    </svg>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">
+                                        Section 2 Cover
+                                        <span class="rtl-badge">RTL</span>
+                                    </h3>
+                                    <p class="card-path">src/health-report/embedded/section-2/section-2-cover-rtl.html</p>
+                                </div>
+                            </div>
+                            <p class="card-description">Right-to-left version of the Medical profile cover page, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                            <div class="card-tags">
+                                <span class="tag">Medical Profile</span>
+                                <span class="tag">Navigation</span>
+                                <span class="tag">RTL</span>
+                            </div>
+                            <div class="card-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"/>
+                                    <polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="src/health-report/embedded/section-2/section-2-happy-case.html" class="template-card" data-search="section 2 happy case demographics chronic conditions family history biological age quality of life lab tests past recommended" target="_blank" rel="noopener noreferrer">
+                            <div class="card-header">
+                                <div class="card-icon pink">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Section 2 - Happy Case</h3>
+                                    <p class="card-path">src/health-report/embedded/section-2/section-2-happy-case.html</p>
+                                </div>
+                            </div>
+                            <p class="card-description">Comprehensive medical profile pages including demographics, chronic conditions, family history, biological age, quality of life metrics, and lab tests (past and recommended).</p>
+                            <div class="card-tags">
+                                <span class="tag">Medical Profile</span>
+                                <span class="tag">Demographics</span>
+                                <span class="tag">Lab Tests</span>
+                                <span class="tag">LTR</span>
+                            </div>
+                            <div class="card-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"/>
+                                    <polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="src/health-report/embedded/section-2/section-2-happy-case-rtl.html" class="template-card" data-search="section 2 happy case demographics chronic conditions family history biological age quality of life lab tests past recommended rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                            <div class="card-header">
+                                <div class="card-icon cyan">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">
+                                        Section 2 - Happy Case
+                                        <span class="rtl-badge">RTL</span>
+                                    </h3>
+                                    <p class="card-path">src/health-report/embedded/section-2/section-2-happy-case-rtl.html</p>
+                                </div>
+                            </div>
+                            <p class="card-description">Right-to-left version of the comprehensive medical profile pages, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                            <div class="card-tags">
+                                <span class="tag">Medical Profile</span>
+                                <span class="tag">Demographics</span>
+                                <span class="tag">Lab Tests</span>
+                                <span class="tag">RTL</span>
+                            </div>
+                            <div class="card-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"/>
+                                    <polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+
+                <div class="no-results" id="embeddedNoResults">
+                    <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        <line x1="8" y1="8" x2="14" y2="14"/>
+                        <line x1="14" y1="8" x2="8" y2="14"/>
+                    </svg>
+                    <h3 class="no-results-title">No templates found</h3>
+                    <p class="no-results-text">Try adjusting your search terms</p>
+                </div>
             </div>
 
-            <div class="no-results" id="noResults">
-                <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"/>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                    <line x1="8" y1="8" x2="14" y2="14"/>
-                    <line x1="14" y1="8" x2="8" y2="14"/>
-                </svg>
-                <h3 class="no-results-title">No templates found</h3>
-                <p class="no-results-text">Try adjusting your search terms</p>
+            <!-- All Templates Tab -->
+            <div class="tab-content" id="allTab">
+                <div class="section-header">
+                    <h2 class="section-title">All Templates</h2>
+                    <span class="template-count" id="allCount">15 templates</span>
+                </div>
+
+                <div id="allContainer">
+                    <!-- Root / index.html -->
+                    <div class="template-group" data-section="root">
+                        <div class="group-header">
+                            <h3 class="group-title">Root</h3>
+                            <span class="group-count">1 template</span>
+                        </div>
+                        <div class="templates-grid">
+                            <a href="src/health-report/index.html" class="template-card" data-search="health report main chart quality life biological age" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon pink">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Health Report</h3>
+                                        <p class="card-path">src/health-report/index.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Main health report page with biological age section and interactive quality of life chart built with Chart.js.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Chart.js</span>
+                                    <span class="tag">Interactive</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- front-cover-page/ -->
+                    <div class="template-group" data-section="front-cover-page">
+                        <div class="group-header">
+                            <h3 class="group-title">front-cover-page/</h3>
+                            <span class="group-count">2 templates</span>
+                        </div>
+                        <div class="templates-grid">
+                            <a href="src/health-report/front-cover-page/front-cover-page.html" class="template-card" data-search="front cover page title introduction profile user" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon blue">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                            <line x1="3" y1="9" x2="21" y2="9"/>
+                                            <line x1="9" y1="21" x2="9" y2="9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Front Cover Page</h3>
+                                        <p class="card-path">src/health-report/front-cover-page/front-cover-page.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Beautiful cover page for the health report with user profile, branding elements, and decorative graphics.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Cover</span>
+                                    <span class="tag">Profile</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/front-cover-page/front-cover-page-rtl.html" class="template-card" data-search="front cover page title introduction profile user rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon cyan">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                            <line x1="3" y1="9" x2="21" y2="9"/>
+                                            <line x1="15" y1="21" x2="15" y2="9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">
+                                            Front Cover Page
+                                            <span class="rtl-badge">RTL</span>
+                                        </h3>
+                                        <p class="card-path">src/health-report/front-cover-page/front-cover-page-rtl.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Right-to-left version of the cover page, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Cover</span>
+                                    <span class="tag">Profile</span>
+                                    <span class="tag">RTL</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- table-of-content/ -->
+                    <div class="template-group" data-section="table-of-content">
+                        <div class="group-header">
+                            <h3 class="group-title">table-of-content/</h3>
+                            <span class="group-count">2 templates</span>
+                        </div>
+                        <div class="templates-grid">
+                            <a href="src/health-report/table-of-content/table-of-content.html" class="template-card" data-search="table of content contents toc navigation sections chapters index" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon pink">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="8" y1="6" x2="21" y2="6"/>
+                                            <line x1="8" y1="12" x2="21" y2="12"/>
+                                            <line x1="8" y1="18" x2="21" y2="18"/>
+                                            <line x1="3" y1="6" x2="3.01" y2="6"/>
+                                            <line x1="3" y1="12" x2="3.01" y2="12"/>
+                                            <line x1="3" y1="18" x2="3.01" y2="18"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Table of Contents</h3>
+                                        <p class="card-path">src/health-report/table-of-content/table-of-content.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Structured table of contents with section navigation, page numbers, and organized chapter listings.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Navigation</span>
+                                    <span class="tag">Structure</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/table-of-content/table-of-content-rtl.html" class="template-card" data-search="table of content contents toc navigation sections chapters index rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon blue">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="3" y1="6" x2="16" y2="6"/>
+                                            <line x1="3" y1="12" x2="16" y2="12"/>
+                                            <line x1="3" y1="18" x2="16" y2="18"/>
+                                            <line x1="21" y1="6" x2="21.01" y2="6"/>
+                                            <line x1="21" y1="12" x2="21.01" y2="12"/>
+                                            <line x1="21" y1="18" x2="21.01" y2="18"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">
+                                            Table of Contents
+                                            <span class="rtl-badge">RTL</span>
+                                        </h3>
+                                        <p class="card-path">src/health-report/table-of-content/table-of-content-rtl.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Right-to-left version of the table of contents for Arabic, Hebrew, and other RTL language support.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Navigation</span>
+                                    <span class="tag">Structure</span>
+                                    <span class="tag">RTL</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- section-1/ -->
+                    <div class="template-group" data-section="section-1">
+                        <div class="group-header">
+                            <h3 class="group-title">section-1/</h3>
+                            <span class="group-count">6 templates</span>
+                        </div>
+                        <div class="templates-grid">
+                            <a href="src/health-report/section-1/section-1-cover.html" class="template-card" data-search="section 1 cover summary questions data context highlights risk signals doctor" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon cyan">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                            <polyline points="10 9 9 9 8 9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Section 1 Cover</h3>
+                                        <p class="card-path">src/health-report/section-1/section-1-cover.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Summary & Questions cover page with section navigation, featuring large title and organized section listings with page references.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Summary</span>
+                                    <span class="tag">Navigation</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-1/section-1-cover-rtl.html" class="template-card" data-search="section 1 cover summary questions data context highlights risk signals doctor rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon pink">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="8" y1="13" x2="16" y2="13"/>
+                                            <line x1="8" y1="17" x2="16" y2="17"/>
+                                            <polyline points="14 9 15 9 16 9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">
+                                            Section 1 Cover
+                                            <span class="rtl-badge">RTL</span>
+                                        </h3>
+                                        <p class="card-path">src/health-report/section-1/section-1-cover-rtl.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Right-to-left version of the Summary & Questions cover page, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Summary</span>
+                                    <span class="tag">Navigation</span>
+                                    <span class="tag">RTL</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-1/section-1-happy-case.html" class="template-card" data-search="section 1 happy case data context overview health highlights positive patterns stable noteworthy" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon blue">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Section 1 - Happy Case</h3>
+                                        <p class="card-path">src/health-report/section-1/section-1-happy-case.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Data context overview and health highlights pages. Showcases positive health patterns, data freshness, and noteworthy stable findings with risk signals and doctor questions.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Health Data</span>
+                                    <span class="tag">Highlights</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-1/section-1-happy-case-rtl.html" class="template-card" data-search="section 1 happy case data context overview health highlights positive patterns stable noteworthy rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon cyan">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">
+                                            Section 1 - Happy Case
+                                            <span class="rtl-badge">RTL</span>
+                                        </h3>
+                                        <p class="card-path">src/health-report/section-1/section-1-happy-case-rtl.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Right-to-left version of the data context overview and health highlights pages, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Health Data</span>
+                                    <span class="tag">Highlights</span>
+                                    <span class="tag">RTL</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-1/report-context.html" class="template-card" data-search="report context overview health data freshness questions doctor medical professional" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon pink">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                            <polyline points="10 9 9 9 8 9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Report Context</h3>
+                                        <p class="card-path">src/health-report/section-1/report-context.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Report context overview page with health data freshness information and questions for your doctor section with interactive checkboxes.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Context</span>
+                                    <span class="tag">Questions</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-1/report-context-rtl.html" class="template-card" data-search="report context overview health data freshness questions doctor medical professional rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon blue">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="8" y1="13" x2="16" y2="13"/>
+                                            <line x1="8" y1="17" x2="16" y2="17"/>
+                                            <polyline points="14 9 15 9 16 9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">
+                                            Report Context
+                                            <span class="rtl-badge">RTL</span>
+                                        </h3>
+                                        <p class="card-path">src/health-report/section-1/report-context-rtl.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Right-to-left version of the report context overview page, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Context</span>
+                                    <span class="tag">Questions</span>
+                                    <span class="tag">RTL</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- section-2/ -->
+                    <div class="template-group" data-section="section-2">
+                        <div class="group-header">
+                            <h3 class="group-title">section-2/</h3>
+                            <span class="group-count">4 templates</span>
+                        </div>
+                        <div class="templates-grid">
+                            <a href="src/health-report/section-2/section-2-cover.html" class="template-card" data-search="section 2 cover medical profile demographics chronic conditions allergies family history biological age quality of life lab tests vaccination growth development" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon blue">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                            <polyline points="10 9 9 9 8 9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Section 2 Cover</h3>
+                                        <p class="card-path">src/health-report/section-2/section-2-cover.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Medical profile cover page with section navigation, featuring demographics, chronic conditions, allergies, family history, biological age, quality of life, lab tests, vaccination, and growth & development sections.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Medical Profile</span>
+                                    <span class="tag">Navigation</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-2/section-2-cover-rtl.html" class="template-card" data-search="section 2 cover medical profile demographics chronic conditions allergies family history biological age quality of life lab tests vaccination growth development rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon cyan">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="8" y1="13" x2="16" y2="13"/>
+                                            <line x1="8" y1="17" x2="16" y2="17"/>
+                                            <polyline points="14 9 15 9 16 9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">
+                                            Section 2 Cover
+                                            <span class="rtl-badge">RTL</span>
+                                        </h3>
+                                        <p class="card-path">src/health-report/section-2/section-2-cover-rtl.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Right-to-left version of the Medical profile cover page, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Medical Profile</span>
+                                    <span class="tag">Navigation</span>
+                                    <span class="tag">RTL</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-2/section-2-happy-case.html" class="template-card" data-search="section 2 happy case demographics chronic conditions family history biological age quality of life lab tests past recommended due date" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon pink">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">Section 2 - Happy Case</h3>
+                                        <p class="card-path">src/health-report/section-2/section-2-happy-case.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Medical profile pages with demographics, chronic conditions, family history, biological age calculation, quality of life metrics, and lab test results with past tests and recommended tests.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Medical Profile</span>
+                                    <span class="tag">Lab Tests</span>
+                                    <span class="tag">LTR</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+
+                            <a href="src/health-report/section-2/section-2-happy-case-rtl.html" class="template-card" data-search="section 2 happy case demographics chronic conditions family history biological age quality of life lab tests past recommended due date rtl right left arabic hebrew" target="_blank" rel="noopener noreferrer">
+                                <div class="card-header">
+                                    <div class="card-icon blue">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="card-info">
+                                        <h3 class="card-title">
+                                            Section 2 - Happy Case
+                                            <span class="rtl-badge">RTL</span>
+                                        </h3>
+                                        <p class="card-path">src/health-report/section-2/section-2-happy-case-rtl.html</p>
+                                    </div>
+                                </div>
+                                <p class="card-description">Right-to-left version of the medical profile pages, optimized for Arabic, Hebrew, and other RTL languages.</p>
+                                <div class="card-tags">
+                                    <span class="tag">Medical Profile</span>
+                                    <span class="tag">Lab Tests</span>
+                                    <span class="tag">RTL</span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"/>
+                                        <polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="no-results" id="allNoResults">
+                    <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        <line x1="8" y1="8" x2="14" y2="14"/>
+                        <line x1="14" y1="8" x2="8" y2="14"/>
+                    </svg>
+                    <h3 class="no-results-title">No templates found</h3>
+                    <p class="no-results-text">Try adjusting your search terms</p>
+                </div>
             </div>
         </section>
 
@@ -903,13 +1606,20 @@
 
     <script>
         const searchInput = document.getElementById('searchInput');
-        const templatesContainer = document.getElementById('templatesContainer');
-        const templateGroups = templatesContainer.querySelectorAll('.template-group');
-        const templateCount = document.getElementById('templateCount');
-        const noResults = document.getElementById('noResults');
+        const embeddedContainer = document.getElementById('embeddedContainer');
+        const allContainer = document.getElementById('allContainer');
+        const embeddedCount = document.getElementById('embeddedCount');
+        const allCount = document.getElementById('allCount');
+        const embeddedNoResults = document.getElementById('embeddedNoResults');
+        const allNoResults = document.getElementById('allNoResults');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-        function updateSearch() {
+        let activeTab = 'embedded';
+
+        function updateSearch(container, countEl, noResultsEl) {
             const query = searchInput.value.toLowerCase().trim();
+            const templateGroups = container.querySelectorAll('.template-group');
             let totalVisibleCount = 0;
 
             templateGroups.forEach(group => {
@@ -942,11 +1652,38 @@
                 group.classList.toggle('hidden', groupVisibleCount === 0);
             });
 
-            templateCount.textContent = `${totalVisibleCount} template${totalVisibleCount !== 1 ? 's' : ''}`;
-            noResults.classList.toggle('visible', totalVisibleCount === 0);
+            countEl.textContent = `${totalVisibleCount} template${totalVisibleCount !== 1 ? 's' : ''}`;
+            noResultsEl.classList.toggle('visible', totalVisibleCount === 0);
         }
 
-        searchInput.addEventListener('input', updateSearch);
+        function performSearch() {
+            if (activeTab === 'embedded') {
+                updateSearch(embeddedContainer, embeddedCount, embeddedNoResults);
+            } else {
+                updateSearch(allContainer, allCount, allNoResults);
+            }
+        }
+
+        // Tab switching
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.dataset.tab;
+                
+                // Update active states
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                button.classList.add('active');
+                document.getElementById(`${tabName}Tab`).classList.add('active');
+                
+                activeTab = tabName;
+                
+                // Perform search on the newly active tab
+                performSearch();
+            });
+        });
+
+        searchInput.addEventListener('input', performSearch);
 
         // Keyboard shortcut (Cmd/Ctrl + K)
         document.addEventListener('keydown', (e) => {
@@ -959,7 +1696,7 @@
             // Clear on Escape
             if (e.key === 'Escape' && document.activeElement === searchInput) {
                 searchInput.value = '';
-                updateSearch();
+                performSearch();
                 searchInput.blur();
             }
         });

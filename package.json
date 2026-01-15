@@ -8,6 +8,7 @@
     "build:cover": "node src/health-report/build-embedded.js front-cover-page/",
     "build:toc": "node src/health-report/build-embedded.js table-of-content/",
     "build:section1": "node src/health-report/build-embedded.js section-1/",
+    "build:section2": "node src/health-report/build-embedded.js section-2/",
     "build:index": "node src/health-report/build-embedded.js index.html"
   },
   "keywords": [

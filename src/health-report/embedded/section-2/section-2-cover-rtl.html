@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Report - Section 2 Cover (RTL)</title>
+    <style>
+/* Import Noto Sans and Inter fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+    /* Colors */
+    --color-white: #FFFFFF;
+    --color-black: #14142B;
+    --color-primary: #FF0283;
+    --color-grey-1000: #14142B;
+    --color-grey-900: #2F324B;
+    --color-grey-800: #43476B;
+    --color-grey-700: #4E547D;
+    --color-grey-600: #7D7FAD;
+    --color-divider: #D8D9E8;
+    --color-border: #C0C1D8;
+    --color-green: #00A65F;
+    
+    /* Chart Colors */
+    --color-anxiety: #E54C8C;
+    --color-mobility: #3366FF;
+    --color-social: #33D4CC;
+    --color-selfcare: #FFB830;
+    --color-pain: #F27171;
+    --color-finance: #7DD976;
+    
+    /* Spacing */
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-40: 40px;
+    --spacing-68: 68px;
+    
+    /* Border Radius */
+    --radius-12: 12px;
+    --radius-24: 24px;
+    --radius-round: 28.526px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-grey-1000);
+    line-height: 1.4;
+}
+
+.health-report {
+    max-width: 595px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--color-white);
+    padding: 40px var(--spacing-68) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-grey-1000);
+}
+
+.header-subtitle {
+    display: flex;
+    gap: var(--spacing-4);
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.subtitle-text {
+    color: var(--color-grey-800);
+    font-weight: 400;
+}
+
+.subtitle-name {
+    color: var(--color-grey-1000);
+    font-weight: 600;
+}
+
+.header-logo {
+    width: 88px;
+    height: 32px;
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-divider);
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: var(--spacing-24) var(--spacing-68);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-40);
+}
+
+/* Section Styles */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio-age-icon {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+}
+
+.sun-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-grey-900);
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-divider);
+    border-left-width: 2px;
+    border-radius: var(--radius-12);
+    padding: var(--spacing-16);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+}
+
+.data-row {
+    display: flex;
+    gap: var(--spacing-24);
+}
+
+.data-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.676px;
+    padding: 2px 6px;
+    background-color: var(--color-white);
+    border: 0.334px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-12);
+    backdrop-filter: blur(8.027px);
+    width: fit-content;
+}
+
+.arrow-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.badge-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--color-grey-700);
+    white-space: nowrap;
+}
+
+.data-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--color-grey-700);
+}
+
+.data-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-grey-900);
+    letter-spacing: -0.112px;
+}
+
+.data-value.positive {
+    color: var(--color-green);
+}
+
+.accuracy-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--color-grey-700);
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.footer-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.footer-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-grey-1000);
+    letter-spacing: -0.096px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+}
+
+.link-text {
+    font-size: 11px;
+    color: var(--color-grey-600);
+    text-decoration: underline;
+}
+
+.link-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.footer-description {
+    font-size: 11px;
+    color: var(--color-grey-700);
+    line-height: 1.4;
+}
+
+/* Chart Styles */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-16) 0;
+}
+
+.quality-of-life-chart {
+    width: 150.269px;
+    height: 150.269px;
+    border-radius: 50%;
+    position: relative;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+    
+    /* Base: white background that shows through as borders */
+    background: white;
+}
+
+/* Colored segments layer with white gaps for borders */
+.quality-of-life-chart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    
+    /* Donut chart segments with white borders (~0.6% each) */
+    /* Values: Anxiety 50, Mobility 80, Social 50, Self-care 80, Pain 65, Finance 75 */
+    background: conic-gradient(
+        from -90deg,
+        #FF47AC 0% 12.2%,           /* Anxiety: 50 (Pink) */
+        white 12.2% 12.8%,          /* Border */
+        #264BC7 12.8% 32.2%,        /* Mobility: 80 (Blue) */
+        white 32.2% 32.8%,          /* Border */
+        #33CFFF 32.8% 44.7%,        /* Social: 50 (Cyan) */
+        white 44.7% 45.3%,          /* Border */
+        #FFBE0A 45.3% 64.7%,        /* Self-care: 80 (Orange/Yellow) */
+        white 64.7% 65.3%,          /* Border */
+        #FF6D6B 65.3% 80.9%,        /* Pain: 65 (Coral) */
+        white 80.9% 81.5%,          /* Border */
+        #33DE9F 81.5% 99.4%,        /* Finance: 75 (Green) */
+        white 99.4% 100%             /* Border to close */
+    );
+    
+    /* Mask to create donut hole - inner ~42% is transparent for proper donut shape */
+    mask: radial-gradient(circle, transparent 42%, black 42%);
+    -webkit-mask: radial-gradient(circle, transparent 42%, black 42%);
+}
+
+/* Create donut hole (center circle) */
+.quality-of-life-chart::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 42%;
+    height: 42%;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.chart-labels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.chart-label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 2.667px;
+    padding: 4px 6px;
+    background-color: var(--color-white);
+    border: 0.255px solid var(--color-border);
+    border-radius: var(--radius-round);
+    white-space: nowrap;
+    pointer-events: auto;
+}
+
+.label-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.label-text {
+    font-size: 9px;
+    color: var(--color-grey-700);
+}
+
+/* Label Positioning */
+.label-anxiety {
+    top: 8px;
+    left: 50%;
+    transform: translateX(-120%);
+}
+
+.label-mobility {
+    top: 8px;
+    right: 50%;
+    transform: translateX(120%);
+}
+
+.label-social {
+    top: 70px;
+    right: 0;
+    transform: translateX(10%);
+}
+
+.label-selfcare {
+    top: 70px;
+    left: 0;
+    transform: translateX(-10%);
+}
+
+.label-pain {
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-120%);
+}
+
+.label-finance {
+    bottom: 8px;
+    right: 50%;
+    transform: translateX(120%);
+}
+
+.stats-row {
+    margin-top: var(--spacing-8);
+}
+
+.stat-with-icon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.arrow-icon-sm {
+    width: 15px;
+    height: 15px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--color-white);
+    padding: 26px var(--spacing-68) 32px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-date {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-grey-800);
+}
+
+.footer-page {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-grey-800);
+}
+
+.page-current,
+.page-total {
+    color: var(--color-grey-700);
+}
+
+/* Responsive adjustments */
+@media (max-width: 595px) {
+    .header,
+    .content,
+    .footer {
+        padding-left: var(--spacing-24);
+        padding-right: var(--spacing-24);
+    }
+    
+    .chart-container {
+        height: 180px;
+    }
+    
+    .chart-label {
+        font-size: 8px;
+        padding: 3px 5px;
+    }
+}
+
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700;900&display=swap");
+
+      .section-2-cover {
+        width: 595px;
+        min-height: 842px;
+        background-color: #f0f2ff;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .section-2-header {
+        padding: 40px 68px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+      }
+
+      .header-left {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .header-title {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #14142b;
+      }
+
+      .header-subtitle {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+        text-align: right;
+      }
+
+      .header-subtitle-name {
+        font-weight: 600;
+        color: #14142b;
+      }
+
+      .header-logo {
+        width: 88px;
+        height: 32px;
+      }
+
+      .header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .section-2-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 68px;
+        gap: 40px;
+      }
+
+      .main-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      .main-title-line {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: 1;
+        color: #14142b;
+        text-align: center;
+        margin: 0;
+      }
+
+      .sections-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        max-width: 459px;
+      }
+
+      .section-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        flex-direction: row-reverse;
+      }
+
+      .section-name {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #14142b;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .section-dots {
+        flex: 1;
+        height: 0;
+        border-top: 1px dashed #d8d9e8;
+        min-width: 20px;
+      }
+
+      .section-page {
+        font-family: "Inter", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #14142b;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-direction: row-reverse;
+      }
+
+      .section-arrow {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(180deg);
+      }
+
+      .section-arrow svg {
+        width: 100%;
+        height: 100%;
+        stroke: #14142b;
+      }
+
+      .section-2-footer {
+        padding: 26px 68px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex-direction: row-reverse;
+      }
+
+      .footer-left {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+        text-align: right;
+      }
+
+      .footer-right {
+        font-family: "Noto Sans", "Noto Sans Arabic", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section-2-cover" dir="rtl">
+      <div class="section-2-header">
+        <div class="header-left">
+          <h1 class="header-title">تقرير الصحة</h1>
+          <p class="header-subtitle">
+            تقرير الصحة الخاص بـ
+            <span class="header-subtitle-name">{{name}}</span>
+          </p>
+        </div>
+        <div class="header-logo">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCA5NiA0MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUyLjk2MjkgMjUuNTUyQzUyLjk2MjkgMTguNDgyNyA1OC43OTk4IDEyLjc1MiA2NS45OTk5IDEyLjc1MkM3My4yMDAxIDEyLjc1MiA3OS4wMzcgMTguNDgyNyA3OS4wMzcgMjUuNTUyQzc5LjAzNyAzMi42MjEyIDczLjIwMDEgMzguMzUyIDY1Ljk5OTkgMzguMzUyQzU4Ljc5OTggMzguMzUyIDUyLjk2MjkgMzIuNjIxMiA1Mi45NjI5IDI1LjU1MloiIGZpbGw9IiNGRjAyODMiLz4KPHBhdGggZD0iTTcwLjE3MTggMTkuNzQ5MkM2OS44MTUxIDE5LjQ0MzQgNjkuMTMxMyAxOS4yMjQ4IDY4LjU4MzggMTkuMDgxOUw2OC41MDY1IDE5LjA2NjNMNjkuMjIyMiAxNS44NDg1SDY5LjIxOTlMNjkuMzQyNCAxNS4zMDgxQzY5LjM4NjMgMTUuMTE0NyA2OS4yNzM2IDE0LjkxOTUgNjkuMDc5OSAxNC44NjQxQzY4LjA4MzkgMTQuNTc5MyA2Ny4wMzAxIDE0LjQyNDggNjUuOTQxNiAxNC40MjQ4QzU5LjcxNDUgMTQuNDIyNiA1NC42NjY1IDE5LjQxODkgNTQuNjY2NSAyNS41ODAxQzU0LjY2NjUgMzEuMTU4MyA1OC44MDM5IDM1Ljc3NjggNjQuMjA3MSAzNi42MDIyQzY0LjQwNjYgMzYuNjMyNyA2NC41OTM1IDM2LjUwMjUgNjQuNjM3IDM2LjMwODlMNjQuNzEyNiAzNS45NzIxTDY1LjUzMzkgMzIuMzY1OEM2NS41NzIzIDMyLjE5NzEgNjUuNzIwNSAzMi4wNzQ0IDY1Ljg5NjIgMzIuMDY1Nkw2Ni4wMDM0IDMyLjA2MDNDNjYuMjk0MiAzMi4wMzggNjYuNDMyMyAzMi4wMzM1IDY2LjU5NTkgMzIuMDA2OEM2Ny4yNzc1IDMxLjg5NTIgNjguODg1OSAzMS41NDcxIDY5LjUyNjYgMzEuMjUwM0M2OS45MDYgMzEuMDY5NSA3MC4xNzE4IDMwLjg2NjUgNzAuMzI0IDMwLjY0MzNDNzAuNDg3NiAzMC40MjAyIDcwLjU2NzEgMzAuMTQ3OSA3MC41NjcxIDI5LjgyODhDNzAuNTY3MSAyOS42MjU4IDcwLjUyMzkgMjkuNDYwNiA3MC40Mzc2IDI5LjMzMzRDNzAuMzUxMyAyOS4yMDYyIDcwLjIxOTUgMjkuMTQxNSA3MC4wNDY4IDI5LjE0MTVDNjkuOTM3OCAyOS4xNDE1IDY5LjgwMzcgMjkuMTcyOCA2OS42NDAyIDI5LjIzNzVDNjguOTI0NSAyOS41MzY1IDY4LjEzMzkgMjkuNzYxOSA2Ny42OTMyIDI5Ljg1NTZDNjcuMzA3IDI5LjkzNTkgNjYuNTI1NSAzMC4xNjM1IDY1Ljc1NzYgMzAuMjEwNEM2NS4yMzI4IDMwLjI0MzkgNjQuMTQyMyAzMC4xMDMzIDYzLjUxMyAyOS43NzNDNjIuODgzNyAyOS40MzE2IDYyLjQ5MDcgMjguOTQ1MiA2Mi40OTA3IDI4LjI4NDZDNjIuNDkwNyAyNy44ODk3IDYyLjYyMDIgMjcuNTIxNSA2Mi44ODE1IDI3LjE4MjNDNjMuMTUxOCAyNi44Mjk3IDYzLjU4MTIgMjYuNTQxOCA2NC4xNjczIDI2LjMxODdDNjQuNzY0OCAyNi4wOTU1IDY1LjUxMjIgMjUuOTcyOCA2Ni40MTQyIDI1Ljk1MDVDNjcuMDY2MiAyNS45MzkzIDY3LjM5MTEgMjUuOTA4MSA2Ny4zOTExIDI1LjIwNTJDNjcuMzkxMSAyNC45ODIgNjcuMzQzMyAyNC44MjEzIDY3LjI0NTcgMjQuNzI1NEM2Ny4xNDggMjQuNjI5NCA2Ni45Nzk5IDI0LjU3NTkgNjYuNzQxMyAyNC41NjQ3QzY1Ljc5NjIgMjQuNTMzNSA2NS4xMTQ3IDI0LjM1NzIgNjQuNjg5OCAyNC4wMzgxQzY0LjI3NjQgMjMuNzA3OCA2NC4wNzE5IDIzLjI5MjggNjQuMDcxOSAyMi43OTA3QzY0LjA3MTkgMjIuMTQxMyA2NC4zNDkxIDIxLjYyMzYgNjQuOTAxMSAyMS4yMzk4QzY1LjQ1NTUgMjAuODU2IDY2LjE5MTUgMjAuNjYxOCA2Ny4xMTM5IDIwLjY2NDFDNjcuMzM2NSAyMC42NjQxIDY4LjE3NDggMjAuNjY0MSA2OC42MzYgMjEuMDAzM0M2OS4wNTQgMjEuMzA5IDY5LjE0OTUgMjEuNTg1NyA2OS4xNDk1IDIxLjk2OTVDNjkuMTQ5NSAyMi4wOTY3IDY5LjE0MDQgMjIuNDE4IDY5LjA0OTUgMjIuNjYxM0M2OC45NzY4IDIyLjg1MzIgNjguODU2NCAyMy4wODk3IDY4Ljg1NjQgMjMuMjcyN0M2OC44NTY0IDIzLjUzODIgNjguOTQyNyAyMy43NDEzIDY5LjExNzcgMjMuODc5N0M2OS4yOTAzIDI0LjAwNjkgNjkuNTMxMSAyNC4wNzE2IDY5LjgzMzMgMjQuMDcxNkM3MC4yNjcyIDI0LjA3MTYgNzAuNTk4OSAyMy44Nzk3IDcwLjgyNjEgMjMuNDk1OEM3MS4wNjQ2IDIzLjEwMDkgNzEuMTg1IDIyLjU4OTkgNzEuMTg1IDIxLjk2MDZDNzEuMTgwNSAyMS4wNTAxIDcwLjg0NDIgMjAuMzE2IDcwLjE3MTggMTkuNzQ5MlpNNjYuODgwNiAxOC41OTI4QzY2Ljg0MDIgMTguNzY1OSA2Ni42ODQyIDE4Ljg4ODEgNjYuNTAzNiAxOC44OTY5QzY1LjcwNjEgMTguOTM1OSA2NS4xMDk0IDE5LjA5MTUgNjQuMzkyMiAxOS4zNjUzQzYzLjU1NjIgMTkuNjg0NCA2Mi44ODgzIDIwLjE0NDEgNjIuMzkwNyAyMC43Mzk5QzYxLjkwMjMgMjEuMzI2OCA2MS42NTkyIDIyLjAwMyA2MS42NTkyIDIyLjc3MDZDNjEuNjU5MiAyMy4zMzUyIDYxLjgzMTkgMjMuODQ0IDYyLjE2MzYgMjQuMzA1OUM2Mi42MzE2IDI0Ljk1OTcgNjMuNjQ0OCAyNS4yNjU0IDYzLjY0NDggMjUuMjY1NEM2My42NDQ4IDI1LjI2NTQgNjIuMjA5IDI1LjI4MzMgNjAuOTc1NCAyNi4zNDc3QzYwLjMxMiAyNi45MTkgNjAuMDgwMyAyNy43NjQ3IDYwLjA4MDMgMjguNjgxOEM2MC4wODAzIDI5LjM1MzUgNjAuMzAyOSAyOS45NTYgNjAuNzQ4MiAzMC40ODkzQzYxLjIwNDggMzEuMDIyNyA2MS44OTc4IDMxLjQzMzMgNjIuODE1NiAzMS43NTI0QzYzLjA2NDQgMzEuODM5MiA2My4yNTUgMzEuOTE0NyA2My40ODAyIDMxLjk3NTNDNjMuNjk5NyAzMi4wMzQ0IDYzLjg0OTMgMzIuMjQ1OSA2My43OTg2IDMyLjQ2MzhMNjMuMzcxMSAzNC4zMDE5QzYzLjMyMTEgMzQuNTE3IDYzLjA5NzEgMzQuNjQ3NSA2Mi44ODQgMzQuNTc3NUM1OS4wNDg2IDMzLjMxOSA1Ni4yODYzIDI5Ljc2NjggNTYuMjg2MyAyNS41ODAxQzU2LjI4NjMgMjAuMzQyNyA2MC42MDk2IDE2LjA5NjIgNjUuOTQxNiAxNi4wOTYyQzY2LjMwNjggMTYuMDk2MiA2Ni42NjcyIDE2LjExNjkgNjcuMDIxMyAxNi4xNTY2QzY3LjI0NjYgMTYuMTgxOCA2Ny4zOTM1IDE2LjM5NjQgNjcuMzQyOCAxNi42MTM0TDY2Ljg4MDYgMTguNTkyOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik03MS43ODI5IDE2LjA3ODZDNzEuNTYwNSAxNS45NDQ0IDcxLjI3NTQgMTYuMDcyMSA3MS4yMiAxNi4zMjMxTDcxLjA3NTQgMTYuOTc5M0M3MS4wMDQ5IDE3LjI5OTEgNzEuMTQ5OCAxNy42MjUzIDcxLjQyMyAxNy44MTE0QzczLjkzMTYgMTkuNTIwMyA3NS41NzQ3IDIyLjM3MzUgNzUuNTc0NyAyNS42MDcxQzc1LjU3NDcgMzAuMjcyNCA3Mi4xNTExIDM0LjE0NyA2Ny42NDI1IDM0LjkzMTNDNjcuMzE0NyAzNC45ODgzIDY3LjA0NDIgMzUuMjI2MiA2Ni45NzM0IDM1LjU0NjdMNjYuODI0IDM2LjIyMzVDNjYuNzY4OSAzNi40NzMyIDY2Ljk3MjQgMzYuNzA1NCA2Ny4yMzAyIDM2LjY3NjVDNzIuODMxNCAzNi4wNSA3Ny4xODUzIDMxLjMzNTMgNzcuMTg1MyAyNS42MDcxQzc3LjE4NTMgMjEuNTY3MiA3NS4wMjE5IDE4LjAzMjYgNzEuNzgyOSAxNi4wNzg2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIyLjQ4NjMgMjkuMjQxMUMyMi42NzA0IDI5LjE3MDYgMjIuODIzOCAyOS4xMzU0IDIyLjk0NjUgMjkuMTM1NEMyMy4xNDI5IDI5LjEzNTQgMjMuMjkwMiAyOS4yMDU5IDIzLjM4ODQgMjkuMzQ2N0MyMy40ODY2IDI5LjQ4NzYgMjMuNTM1NyAyOS42Njk1IDIzLjUzNTcgMjkuODkyNkMyMy41MzU3IDMwLjI0NDcgMjMuNDQzNiAzMC41NDQgMjMuMjU5NSAzMC43OTA1QzIzLjA4NzcgMzEuMDM3MSAyMi43ODcgMzEuMjYwMSAyMi4zNTc0IDMxLjQ1OTZDMjEuNjMzMyAzMS43ODgzIDIwLjY5NDQgMzIuMDUyNCAxOS41NDA4IDMyLjI1MkMxOC4zODcxIDMyLjQzOTggMTcuMjUxOCAzMi41MzM3IDE2LjEzNSAzMi41MzM3QzE0LjU4ODYgMzIuNTMzNyAxMy4yOTM3IDMyLjM2OTQgMTIuMjUwNSAzMi4wNDA3QzExLjIwNzMgMzEuNzAwMyAxMC40MjggMzEuMjM2NiA5LjkxMjUxIDMwLjY0OTdDOS40MDkzMSAzMC4wNjI4IDkuMTU3NzEgMjkuMzk5NSA5LjE1NzcxIDI4LjY2QzkuMTU3NzEgMjcuNjUwNSA5LjQ5NTIzIDI2Ljc5MzYgMTAuMTcwMiAyNi4wODkzQzEwLjg1NzUgMjUuMzczMyAxMS44NjM5IDI0Ljg1NjggMTMuMTg5NCAyNC41Mzk5QzEyLjQ2NTMgMjQuMzQwMyAxMS45MDY5IDIzLjk4ODEgMTEuNTE0MiAyMy40ODM0QzExLjEzMzcgMjIuOTc4NiAxMC45NDM1IDIyLjQxNTIgMTAuOTQzNSAyMS43OTMxQzEwLjk0MzUgMjAuOTQ3OSAxMS4yMTk2IDIwLjIwMjUgMTEuNzcxOSAxOS41NTY5QzEyLjMzNjQgMTguODk5NiAxMy4wOTEyIDE4LjM5NDggMTQuMDM2MyAxOC4wNDI3QzE0Ljk4MTMgMTcuNjkwNSAxNi4wMTg0IDE3LjUxNDQgMTcuMTQ3NSAxNy41MTQ0QzE4LjY2OTQgMTcuNTE0NCAxOS44MTA4IDE3LjgzMTQgMjAuNTcxNyAxOC40NjUyQzIxLjMzMjYgMTkuMDg3NCAyMS43MTMxIDE5Ljg5NzMgMjEuNzEzMSAyMC44OTUxQzIxLjcxMzEgMjEuNTg3NiAyMS41NzgxIDIyLjE1MTEgMjEuMzA4MSAyMi41ODU0QzIxLjA1MDQgMjMuMDA4IDIwLjY3NiAyMy4yMTkzIDIwLjE4NTEgMjMuMjE5M0MxOS44NDE0IDIzLjIxOTMgMTkuNTcxNCAyMy4xNDg5IDE5LjM3NTEgMjMuMDA4QzE5LjE3ODcgMjIuODU1NCAxOS4wODA1IDIyLjYzMjQgMTkuMDgwNSAyMi4zMzg5QzE5LjA4MDUgMjIuMTM5NCAxOS4xMTEyIDIxLjkyMjIgMTkuMTcyNiAyMS42ODc0QzE5LjIzMzkgMjEuMzAwMSAxOS4yNjQ2IDIxLjAzNTkgMTkuMjY0NiAyMC44OTUxQzE5LjI2NDYgMjAuNDcyNSAxOS4wOTg5IDIwLjEzMjEgMTguNzY3NiAxOS44NzM4QzE4LjQzNjIgMTkuNjAzOSAxNy44ODM5IDE5LjQ2ODkgMTcuMTEwNyAxOS40Njg5QzE2LjA2NzUgMTkuNDY4OSAxNS4yMzI5IDE5LjY4MDIgMTQuNjA3IDIwLjEwMjdDMTMuOTgxIDIwLjUyNTMgMTMuNjY4MSAyMS4wOTQ2IDEzLjY2ODEgMjEuODEwN0MxMy42NjgxIDIyLjM2MjQgMTMuOTAxMyAyMi44MjAyIDE0LjM2NzYgMjMuMTg0MUMxNC44NDYzIDIzLjUzNjIgMTUuNjE5NSAyMy43Mjk5IDE2LjY4NzMgMjMuNzY1MUMxNi45NTczIDIzLjc3NjkgMTcuMTQ3NSAyMy44MzU2IDE3LjI1OCAyMy45NDEyQzE3LjM2ODQgMjQuMDQ2OCAxNy40MjM2IDI0LjIyMjkgMTcuNDIzNiAyNC40Njk0QzE3LjQyMzYgMjUuMjQ0MiAxNy4wNTU1IDI1LjYzNzQgMTYuMzE5MSAyNS42NDkxQzE1LjMwMDQgMjUuNjcyNiAxNC40NTM2IDI1LjgwNzYgMTMuNzc4NSAyNi4wNTQxQzEzLjExNTggMjYuMzAwNiAxMi42MzEgMjYuNjE3NSAxMi4zMjQyIDI3LjAwNDlDMTIuMDI5NiAyNy4zODA1IDExLjg4MjMgMjcuNzg1NSAxMS44ODIzIDI4LjIxOThDMTEuODgyMyAyOC45NDc2IDEyLjIzODMgMjkuNDk5MyAxMi45NTAxIDI5Ljg3NUMxMy42NjE5IDMwLjIzODggMTQuNzkxMSAzMC40MjA4IDE2LjMzNzUgMzAuNDIwOEMxNy4zNTYxIDMwLjQyMDggMTguNDMgMzAuMzA5MyAxOS41NTkyIDMwLjA4NjJDMjAuNzAwNiAyOS44NTE1IDIxLjY3NjMgMjkuNTY5OCAyMi40ODYzIDI5LjI0MTFaIiBmaWxsPSIjMTQxNDJCIi8+CjxwYXRoIGQ9Ik0yOS4wNjg2IDI4LjUxOTJDMjkuMjI4MiAyOC41MTkyIDI5LjM1MDkgMjguNTg5NiAyOS40MzY4IDI4LjczMDVDMjkuNTM1IDI4Ljg3MTMgMjkuNTg0MSAyOS4wNjUgMjkuNTg0MSAyOS4zMTE1QzI5LjU4NDEgMjkuNzgxIDI5LjQ2NzUgMzAuMTQ0OSAyOS4yMzQzIDMwLjQwMzJDMjguNzA2NiAzMS4wMjUzIDI4LjEyOTcgMzEuNTM1OSAyNy41MDM4IDMxLjkzNUMyNi44OTAxIDMyLjMzNDEgMjYuMTkwNiAzMi41MzM3IDI1LjQwNTEgMzIuNTMzN0MyNC4zMjUxIDMyLjUzMzcgMjMuNTIxMiAzMi4wNjQyIDIyLjk5MzQgMzEuMTI1MUMyMi40NzggMzAuMTg2IDIyLjIyMDIgMjguOTcxMSAyMi4yMjAyIDI3LjQ4MDNDMjIuMjIwMiAyNi4wNDgyIDIyLjQxMDUgMjQuNDE2NiAyMi43OTA5IDIyLjU4NTRDMjMuMTgzNyAyMC43NTQyIDIzLjc1NDQgMTkuMTgxMyAyNC41MDMgMTcuODY2NkMyNS4yNjQgMTYuNTUxOSAyNi4xNjYgMTUuODk0NSAyNy4yMDkyIDE1Ljg5NDVDMjcuNzk4MyAxNS44OTQ1IDI4LjI1ODYgMTYuMTU4NiAyOC41OSAxNi42ODY5QzI4LjkzMzYgMTcuMjAzNCAyOS4xMDU0IDE3Ljk0ODcgMjkuMTA1NCAxOC45MjNDMjkuMTA1NCAyMC4zMTk5IDI4LjcwMDQgMjEuOTM5OCAyNy44OTA0IDIzLjc4MjdDMjcuMDgwNCAyNS42MjU3IDI1Ljk4MTkgMjcuNDUxIDI0LjU5NTEgMjkuMjU4N0MyNC42ODEgMjkuNzQgMjQuODIyMSAzMC4wODYyIDI1LjAxODUgMzAuMjk3NUMyNS4yMTQ5IDMwLjQ5NzEgMjUuNDcyNiAzMC41OTY5IDI1Ljc5MTcgMzAuNTk2OUMyNi4yOTQ5IDMwLjU5NjkgMjYuNzM2NyAzMC40NjE5IDI3LjExNzIgMzAuMTkxOUMyNy40OTc3IDI5LjkxMDIgMjcuOTgyNCAyOS40MzQ4IDI4LjU3MTYgMjguNzY1N0MyOC43MTg4IDI4LjYwMTMgMjguODg0NSAyOC41MTkyIDI5LjA2ODYgMjguNTE5MlpNMjYuODA0MiAxNy42Mzc3QzI2LjUyMTkgMTcuNjM3NyAyNi4yMDI4IDE4LjEyNDggMjUuODQ2OSAxOS4wOTkxQzI1LjQ5MSAyMC4wNzM0IDI1LjE3OCAyMS4yODI1IDI0LjkwOCAyMi43MjYzQzI0LjYzOCAyNC4xNzAxIDI0LjQ5MDcgMjUuNTU1MiAyNC40NjYyIDI2Ljg4MTdDMjUuMzM3NiAyNS41MDgzIDI2LjAzMSAyNC4xMzQ5IDI2LjU0NjUgMjIuNzYxNUMyNy4wNjIgMjEuMzc2NCAyNy4zMTk3IDIwLjExNDUgMjcuMzE5NyAxOC45NzU5QzI3LjMxOTcgMTguMDgzNyAyNy4xNDc5IDE3LjYzNzcgMjYuODA0MiAxNy42Mzc3WiIgZmlsbD0iIzE0MTQyQiIvPgo8cGF0aCBkPSJNNDAuNzI1MSAyOC41MTkyQzQwLjg4NDYgMjguNTE5MiA0MS4wMDc0IDI4LjU4OTYgNDEuMDkzMyAyOC43MzA1QzQxLjE5MTUgMjguODcxMyA0MS4yNDA2IDI5LjA2NSA0MS4yNDA2IDI5LjMxMTVDNDEuMjQwNiAyOS43ODEgNDEuMTI0IDMwLjE0NDkgNDAuODkwOCAzMC40MDMyQzQwLjM4NzYgMzAuOTkwMSAzOS44MjkyIDMxLjQ5NDggMzkuMjE1NSAzMS45MTc0QzM4LjYxNDEgMzIuMzI4MyAzOC4wMDY2IDMyLjUzMzcgMzcuMzkyOSAzMi41MzM3QzM2LjU5NTIgMzIuNTMzNyAzNi4wMTIyIDMyLjI2MzcgMzUuNjQ0IDMxLjcyMzdDMzUuMjg4MSAzMS4xODM4IDM1LjExMDEgMzAuNDY3NyAzNS4xMTAxIDI5LjU3NTZDMzUuMTEwMSAyOS4xMTc4IDM1LjE1OTIgMjguNTU0NCAzNS4yNTc0IDI3Ljg4NTNDMzUuMzY3OSAyNy4yMTYyIDM1LjUwOSAyNi41NTg5IDM1LjY4MDggMjUuOTEzMkMzNC40NTM1IDI1LjkxMzIgMzIuOTk5MiAyNS45NjYxIDMxLjMxNzggMjYuMDcxN0MzMS4wNDc3IDI3LjcxNTEgMzAuOTEyNyAyOS4yNDY5IDMwLjkxMjcgMzAuNjY3M0MzMC45MTI3IDMxLjc1OSAzMC45NzQxIDMyLjg5NzYgMzEuMDk2OCAzNC4wODMyQzMxLjIzMTggMzUuMjgwNSAzMS40MjgyIDM1Ljg3OTEgMzEuNjg1OSAzNS44NzkxQzMxLjgwODcgMzUuODc5MSAzMS45Mzc1IDM1LjY3MzcgMzIuMDcyNiAzNS4yNjI5QzMyLjIwNzYgMzQuODUyIDMyLjMxOCAzNC4yODg2IDMyLjQwMzkgMzMuNTcyNUMzMi40ODk4IDMyLjg1NjUgMzIuNTMyOCAzMi4wNjQyIDMyLjUzMjggMzEuMTk1NUMzMi41MzI4IDMwLjI0NDcgMzIuNDc3NiAyOS4yMTc2IDMyLjM2NzEgMjguMTE0MkMzMi4zNDI2IDI3Ljc4NTUgMzIuMzk3OCAyNy41NDQ5IDMyLjUzMjggMjcuMzkyM0MzMi42ODAxIDI3LjIyNzkgMzIuODk0OCAyNy4xNDU4IDMzLjE3NzEgMjcuMTQ1OEMzMy40MzQ5IDI3LjE0NTggMzMuNjI1MSAyNy4yMTAzIDMzLjc0NzggMjcuMzM5NUMzMy44NzA2IDI3LjQ2ODYgMzMuOTQ0MiAyNy42ODU3IDMzLjk2ODcgMjcuOTkwOUMzNC4wMzAxIDI4Ljg0NzggMzQuMDYwOCAyOS44NjkxIDM0LjA2MDggMzEuMDU0N0MzNC4wNjA4IDMyLjk2OCAzMy44MTUzIDM0LjYwNTUgMzMuMzI0NCAzNS45NjcyQzMyLjg0NTggMzcuMzI4OCAzMi4wOTcxIDM4LjAwOTcgMzEuMDc4NCAzOC4wMDk3QzMwLjIwNyAzOC4wMDk3IDI5LjU4MTEgMzcuNDA1MSAyOS4yMDA2IDM2LjE5NjFDMjguODIwMiAzNC45OTg4IDI4LjYyOTkgMzMuMTk2OSAyOC42Mjk5IDMwLjc5MDVDMjguNjI5OSAyOS4zNzAyIDI4Ljc0NjUgMjcuODUwMSAyOC45Nzk3IDI2LjIzMDJDMjguODkzOCAyNi4yNDE5IDI4Ljc4MzQgMjYuMjQ3OCAyOC42NDg0IDI2LjI0NzhDMjguMjY3OSAyNi4yNDc4IDI4LjAxMDIgMjYuMTgzMiAyNy44NzUyIDI2LjA1NDFDMjcuNzUyNCAyNS45MjUgMjcuNjkxMSAyNS43MjU0IDI3LjY5MTEgMjUuNDU1NEMyNy42OTExIDI1LjE2MiAyNy43NzA4IDI0LjkyNzIgMjcuOTMwNCAyNC43NTExQzI4LjEwMjIgMjQuNTc1MSAyOC40MjEzIDI0LjQ2OTQgMjguODg3NyAyNC40MzQyQzI4Ljk3MzYgMjQuNDIyNSAyOS4xMDg2IDI0LjQxNjYgMjkuMjkyNyAyNC40MTY2QzI5LjYyNDEgMjIuODMxOSAzMC4wNDc1IDIxLjM5NCAzMC41NjMgMjAuMTAyN0MzMS4wNzg0IDE4LjgxMTUgMzEuNjY3NSAxNy43OTAzIDMyLjMzMDMgMTcuMDM5QzMyLjk5MyAxNi4yNzYgMzMuNjkyNiAxNS44OTQ1IDM0LjQyOSAxNS44OTQ1QzM1LjAwNTggMTUuODk0NSAzNS40NDc3IDE2LjExMTcgMzUuNzU0NSAxNi41NDZDMzYuMDczNiAxNi45Njg2IDM2LjIzMzEgMTcuNTE0NCAzNi4yMzMxIDE4LjE4MzVDMzYuMjMzMSAyMC41NDI5IDM1LjIzOSAyMi41NTAyIDMzLjI1MDggMjQuMjA1M0MzNC43NDgxIDI0LjE0NjYgMzUuOTU3IDI0LjExNzMgMzYuODc3NSAyNC4xMTczQzM3LjIyMTEgMjQuMTE3MyAzNy41MDM0IDI0LjE4MTggMzcuNzI0MyAyNC4zMTFDMzcuOTQ1MiAyNC40MjgzIDM4LjA1NTcgMjQuNjYzMSAzOC4wNTU3IDI1LjAxNTNDMzguMDU1NyAyNS4yNSAzOC4wMTI3IDI1LjYwOCAzNy45MjY4IDI2LjA4OTNDMzcuODUzMiAyNi41NzA2IDM3Ljc2NzMgMjcuMDUxOSAzNy42NjkxIDI3LjUzMzFDMzcuNDQ4MiAyOC41MzA5IDM3LjMzNzcgMjkuMTg4MyAzNy4zMzc3IDI5LjUwNTJDMzcuMzM3NyAyOS44NTczIDM3LjM4NjggMzAuMTI3MyAzNy40ODUgMzAuMzE1MUMzNy41ODMyIDMwLjUwMyAzNy43NDg5IDMwLjU5NjkgMzcuOTgyMSAzMC41OTY5QzM4LjE5MDcgMzAuNTk2OSAzOC40NTQ2IDMwLjQ2MTkgMzguNzczNyAzMC4xOTE5QzM5LjEwNSAyOS45MTAyIDM5LjU4OTggMjkuNDM0OCA0MC4yMjggMjguNzY1N0M0MC4zNzUzIDI4LjYwMTMgNDAuNTQxIDI4LjUxOTIgNDAuNzI1MSAyOC41MTkyWk0zNC4wNzkyIDE3LjU4NDlDMzMuNzg0NiAxNy41ODQ5IDMzLjQxMDMgMTguMTk1MyAzMi45NTYyIDE5LjQxNkMzMi41MDIxIDIwLjYzNjggMzIuMDkxIDIyLjExNTkgMzEuNzIyOCAyMy44NTMyQzMyLjMzNjQgMjMuNDQyMyAzMi44NDU4IDIyLjkzMTcgMzMuMjUwOCAyMi4zMjEzQzMzLjY2ODEgMjEuNzEwOSAzMy45NzQ5IDIxLjA4MjkgMzQuMTcxMyAyMC40MzczQzM0LjM3OTkgMTkuNzc5OSAzNC40ODQyIDE5LjE3NTQgMzQuNDg0MiAxOC42MjM3QzM0LjQ4NDIgMTcuOTMxMSAzNC4zNDkyIDE3LjU4NDkgMzQuMDc5MiAxNy41ODQ5Wk0zNy42NTA3IDIzLjA3ODRDMzcuMTM1MiAyMy4wNzg0IDM2Ljc0ODYgMjIuOTY2OSAzNi40OTA5IDIyLjc0MzlDMzYuMjMzMSAyMi41MDkxIDM2LjEwNDMgMjIuMTg2MyAzNi4xMDQzIDIxLjc3NTVDMzYuMTA0MyAyMS4zNjQ2IDM2LjI3IDIxLjAyNDIgMzYuNjAxMyAyMC43NTQyQzM2Ljk0NSAyMC40NzI1IDM3LjM2ODQgMjAuMzMxNiAzNy44NzE2IDIwLjMzMTZDMzguMzI1NyAyMC4zMzE2IDM4LjY5MzkgMjAuNDM3MyAzOC45NzYyIDIwLjY0ODZDMzkuMjU4NSAyMC44NTk5IDM5LjM5OTYgMjEuMTU5MiAzOS4zOTk2IDIxLjU0NjZDMzkuMzk5NiAyMi4wMTYxIDM5LjI0IDIyLjM5MTcgMzguOTIwOSAyMi42NzM1QzM4LjYwMTggMjIuOTQzNCAzOC4xNzg0IDIzLjA3ODQgMzcuNjUwNyAyMy4wNzg0WiIgZmlsbD0iIzE0MTQyQiIvPgo8cGF0aCBkPSJNNDYuMzM2NiAyOS4wNDc0QzQ2LjQ5NjEgMjkuMDQ3NCA0Ni42MTg5IDI5LjExNzggNDYuNzA0OCAyOS4yNTg3QzQ2LjgwMyAyOS4zOTk1IDQ2Ljg1MjEgMjkuNTkzMiA0Ni44NTIxIDI5LjgzOTdDNDYuODUyMSAzMC4yNjIzIDQ2Ljc0NzcgMzAuNjI2MiA0Ni41MzkxIDMwLjkzMTRDNDYuMTk1NCAzMS40MzYyIDQ1Ljc0MTMgMzEuODI5NCA0NS4xNzY4IDMyLjExMTFDNDQuNjI0NSAzMi4zOTI4IDQzLjk2MTcgMzIuNTMzNyA0My4xODg1IDMyLjUzMzdDNDIuMDEwMyAzMi41MzM3IDQxLjA5NiAzMi4xOTkyIDQwLjQ0NTUgMzEuNTMwMUMzOS43OTUgMzAuODQ5MiAzOS40Njk4IDI5LjkzMzYgMzkuNDY5OCAyOC43ODMzQzM5LjQ2OTggMjcuOTczMyAzOS42NDc3IDI3LjIyMjEgNDAuMDAzNyAyNi41Mjk1QzQwLjM1OTYgMjUuODI1MiA0MC44NTA1IDI1LjI2NzYgNDEuNDc2NCAyNC44NTY4QzQyLjExNDYgMjQuNDQ1OSA0Mi44MzI2IDI0LjI0MDUgNDMuNjMwNCAyNC4yNDA1QzQ0LjM0MjIgMjQuMjQwNSA0NC45MTI5IDI0LjQ0NTkgNDUuMzQyNSAyNC44NTY4QzQ1Ljc3MiAyNS4yNTU5IDQ1Ljk4NjggMjUuODAxNyA0NS45ODY4IDI2LjQ5NDNDNDUuOTg2OCAyNy4zMDQyIDQ1LjY4IDI4LjAwMjcgNDUuMDY2MyAyOC41ODk2QzQ0LjQ2NDkgMjkuMTY0OCA0My40MzQgMjkuNjIyNiA0MS45NzM1IDI5Ljk2M0M0Mi4yNjggMzAuNTAzIDQyLjc2NTEgMzAuNzcyOSA0My40NjQ3IDMwLjc3MjlDNDMuOTY3OSAzMC43NzI5IDQ0LjM3OSAzMC42NjE0IDQ0LjY5ODEgMzAuNDM4NEM0NS4wMjk1IDMwLjIxNTQgNDUuNDEgMjkuODM5NyA0NS44Mzk1IDI5LjMxMTVDNDUuOTg2OCAyOS4xMzU0IDQ2LjE1MjUgMjkuMDQ3NCA0Ni4zMzY2IDI5LjA0NzRaTTQzLjMxNzQgMjUuOTY2MUM0Mi44NjMzIDI1Ljk2NjEgNDIuNDc2NyAyNi4yMTg0IDQyLjE1NzYgMjYuNzIzMkM0MS44NTA4IDI3LjIyNzkgNDEuNjk3MyAyNy44MzgzIDQxLjY5NzMgMjguNTU0NFYyOC41ODk2QzQyLjQyMTUgMjguNDI1MyA0Mi45OTIyIDI4LjE3ODggNDMuNDA5NCAyNy44NTAxQzQzLjgyNjcgMjcuNTIxNCA0NC4wMzU0IDI3LjEzOTkgNDQuMDM1NCAyNi43MDU2QzQ0LjAzNTQgMjYuNDgyNiA0My45Njc5IDI2LjMwNjUgNDMuODMyOSAyNi4xNzc0QzQzLjcxMDEgMjYuMDM2NSA0My41MzgzIDI1Ljk2NjEgNDMuMzE3NCAyNS45NjYxWiIgZmlsbD0iIzE0MTQyQiIvPgo8L3N2Zz4K" alt="Elfie Logo" />
+        </div>
+      </div>
+
+      <div class="section-2-content">
+        <div class="main-title">
+          <h2 class="main-title-line">الملف</h2>
+          <h2 class="main-title-line">الطبي</h2>
+        </div>
+
+        <div class="sections-list">
+          <div class="section-item">
+            <span class="section-name">{{demographicsName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{demographicsPage}}
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{chronicConditionsName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{chronicConditionsPage}}
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{allergiesName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{allergiesPage}}
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{familyHistoryName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{familyHistoryPage}}
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{biologicalAgeName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{biologicalAgePage}}
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{qualityOfLifeName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{qualityOfLifePage}}
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{labTestsName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{labTestsPage}}
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{vaccinationName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{vaccinationPage}}
+            </div>
+          </div>
+
+          {{#if showGrowthDevelopment}}
+          <div class="section-item">
+            <span class="section-name">{{growthDevelopmentName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+              صفحة {{growthDevelopmentPage}}
+            </div>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="section-2-footer">
+        <div class="footer-right">صفحة {{currentPage}} من {{totalPages}}</div>
+        <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+      </div>
+    </div>
+  </body>
+</html>

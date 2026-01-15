@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Report - Section 2 Happy Case (RTL)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            direction: rtl;
+        }
+
+        .page {
+            width: 595px;
+            min-height: 842px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            page-break-after: always;
+            direction: rtl;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            padding: 40px 68px 0;
+        }
+
+        .header-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-direction: row-reverse;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+            text-align: right;
+        }
+
+        .header-title {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.2;
+            color: #14142b;
+            margin: 0;
+        }
+
+        .header-subtitle {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            margin: 0;
+        }
+
+        .header-subtitle-name {
+            font-weight: 600;
+            color: #14142b;
+        }
+
+        .header-logo {
+            width: 88px;
+            height: 32px;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .header-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #d8dae7;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 24px 68px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Section with Icon */
+        .section-with-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-icon-header {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+
+        .icon-container {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .section-title {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+            color: #2f324b;
+            margin: 0;
+        }
+
+        /* Card Styles */
+        .info-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e0e1e8;
+            border-right-width: 2px;
+            border-left-width: 1px;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-card-two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .info-item-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-direction: row-reverse;
+        }
+
+        .info-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .info-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .info-label {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            text-align: right;
+        }
+
+        .info-value {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 18px;
+            color: #14142b;
+            text-align: right;
+        }
+
+        .info-value-bold {
+            font-weight: 700;
+        }
+
+        /* Chronic Conditions List */
+        .conditions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .condition-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .condition-name {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;
+            color: #14142b;
+            text-align: right;
+        }
+
+        .condition-details {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            text-align: right;
+        }
+
+        /* Family History List */
+        .family-history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .family-history-item {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            text-align: right;
+        }
+
+        /* Biological Age Section */
+        .bio-age-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e0e1e8;
+            border-right-width: 2px;
+            border-left-width: 1px;
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .bio-age-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .bio-age-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bio-age-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #4e547d;
+            text-align: right;
+        }
+
+        .bio-age-value {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.2;
+            color: #14142b;
+            text-align: right;
+        }
+
+        .bio-age-change {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #00a65f;
+            flex-direction: row-reverse;
+        }
+
+        .bio-age-change-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .bio-age-accuracy {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            text-align: right;
+        }
+
+        .bio-age-description {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bio-age-description-title {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.2;
+            color: #2f324b;
+            text-align: right;
+        }
+
+        .bio-age-description-link {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #3366ff;
+            text-decoration: none;
+            text-align: right;
+        }
+
+        .bio-age-description-text {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            text-align: right;
+        }
+
+        /* Quality of Life Section */
+        .qol-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e0e1e8;
+            border-right-width: 2px;
+            border-left-width: 1px;
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .qol-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .qol-score-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .qol-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #4e547d;
+            text-align: right;
+        }
+
+        .qol-value {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #14142b;
+            text-align: right;
+        }
+
+        .qol-change {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #00a65f;
+            flex-direction: row-reverse;
+        }
+
+        .qol-dimensions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .qol-dimension-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .qol-dimension-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .qol-dimension-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .qol-dimension-name {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #2f324b;
+            text-align: center;
+        }
+
+        .qol-dimension-value {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.2;
+            color: #14142b;
+        }
+
+        .qol-description {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .qol-description-title {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.2;
+            color: #2f324b;
+            text-align: right;
+        }
+
+        .qol-description-link {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #3366ff;
+            text-decoration: none;
+            text-align: right;
+        }
+
+        .qol-description-text {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            text-align: right;
+        }
+
+        /* Lab Tests Section */
+        .lab-tests-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lab-tests-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #4e547d;
+            margin: 0;
+            text-align: right;
+        }
+
+        .lab-tests-table {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .lab-tests-header {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr 1fr;
+            gap: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #d8dae7;
+        }
+
+        .lab-tests-header-cell {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #2f324b;
+            text-transform: uppercase;
+            text-align: right;
+        }
+
+        .lab-tests-header-cell.right {
+            text-align: left;
+        }
+
+        .lab-tests-row {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr 1fr;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lab-tests-row:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .lab-tests-cell {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #2f324b;
+            text-align: right;
+        }
+
+        .lab-tests-cell.right {
+            text-align: left;
+        }
+
+        .lab-tests-section-title {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #2f324b;
+            text-transform: uppercase;
+            padding: 16px 0 8px;
+            border-top: 1px solid #d8dae7;
+            margin-top: 8px;
+            text-align: right;
+        }
+
+        .lab-tests-recommended {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+        }
+
+        .lab-tests-recommended-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lab-tests-recommended-cell {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #2f324b;
+            text-align: right;
+        }
+
+        .lab-tests-recommended-cell.right {
+            text-align: left;
+        }
+
+        .lab-tests-recommended-cell.bold {
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: white;
+            padding: 26px 68px 32px;
+        }
+
+        .footer-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-direction: row-reverse;
+        }
+
+        .footer-left {
+            flex: 1;
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            text-align: right;
+        }
+
+        .footer-right {
+            font-family: 'Noto Sans Arabic', 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        .page-number {
+            color: #4e547d;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 6: Demographics and Chronic Conditions -->
+    <div class="page">
+        <div class="header">
+            <div class="header-layout">
+                <div class="header-left">
+                    <h1 class="header-title">Health Report</h1>
+                    <p class="header-subtitle">Health report of <span class="header-subtitle-name">{{userName}}</span></p>
+                </div>
+                <div class="header-logo">
+                    <img src="../../assets/elfie-logo.svg" alt="Elfie Logo">
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <!-- Demographics Section -->
+            <div class="section-with-icon">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/icon-profile.svg" alt="Demographics">
+                    </div>
+                    <h2 class="section-title">Demographics</h2>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-two-column">
+                        <div class="info-item">
+                            <div class="info-item-row">
+                                <div class="info-icon">
+                                    <img src="../../assets/health-report/icon-profile.svg" alt="Sex">
+                                </div>
+                                <span class="info-label">Sex</span>
+                            </div>
+                            <span class="info-value">{{demographics.sex}}</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-row">
+                                <div class="info-icon">
+                                    <img src="../../assets/health-report/icon-calendar.svg" alt="DOB">
+                                </div>
+                                <span class="info-label">DOB</span>
+                            </div>
+                            <span class="info-value">{{demographics.dob}} ({{demographics.age}} years)</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-row">
+                                <div class="info-icon">
+                                    <img src="../../assets/health-report/icon-location.svg" alt="Country">
+                                </div>
+                                <span class="info-label">Country</span>
+                            </div>
+                            <span class="info-value">{{demographics.country}}</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-row">
+                                <div class="info-icon">
+                                    <img src="../../assets/health-report/icon-profile.svg" alt="Ethnicity">
+                                </div>
+                                <span class="info-label">Ethnicity</span>
+                            </div>
+                            <span class="info-value">{{demographics.ethnicity}}</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-row">
+                                <div class="info-icon">
+                                    <img src="../../assets/health-report/icon-profile.svg" alt="Height">
+                                </div>
+                                <span class="info-label">Height</span>
+                            </div>
+                            <span class="info-value">{{demographics.height}}</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-row">
+                                <div class="info-icon">
+                                    <img src="../../assets/health-report/icon-profile.svg" alt="Weight">
+                                </div>
+                                <span class="info-label">Weight</span>
+                            </div>
+                            <span class="info-value">{{demographics.weight}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chronic Conditions Section -->
+            <div class="section-with-icon">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/warning-red.svg" alt="Chronic Conditions">
+                    </div>
+                    <h2 class="section-title">Chronic Conditions</h2>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-two-column">
+                        <div class="conditions-list">
+                            {{#each chronicConditions.left}}
+                            <div class="condition-item">
+                                <div class="condition-name">{{name}}</div>
+                                <div class="condition-details">{{details}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <div class="conditions-list">
+                            {{#each chronicConditions.right}}
+                            <div class="condition-item">
+                                <div class="condition-name">{{name}}</div>
+                                <div class="condition-details">{{details}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-layout">
+                <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+                <div class="footer-right">Page <span class="page-number">{{page6Number}}</span> of <span class="page-number">{{totalPages}}</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7: Family History -->
+    <div class="page">
+        <div class="header">
+            <div class="header-layout">
+                <div class="header-left">
+                    <h1 class="header-title">Health Report</h1>
+                    <p class="header-subtitle">Health report of <span class="header-subtitle-name">{{userName}}</span></p>
+                </div>
+                <div class="header-logo">
+                    <img src="../../assets/elfie-logo.svg" alt="Elfie Logo">
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <!-- Family History Section -->
+            <div class="section-with-icon">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/stars.svg" alt="Family History">
+                    </div>
+                    <h2 class="section-title">Family History</h2>
+                </div>
+                <div class="info-card">
+                    <div class="family-history-list">
+                        {{#each familyHistory}}
+                        <div class="family-history-item">{{this}}</div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-layout">
+                <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+                <div class="footer-right">Page <span class="page-number">{{page7Number}}</span> of <span class="page-number">{{totalPages}}</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7 (Alternative): Biological Age and Quality of Life -->
+    <div class="page">
+        <div class="header">
+            <div class="header-layout">
+                <div class="header-left">
+                    <h1 class="header-title">Health Report</h1>
+                    <p class="header-subtitle">Health report of <span class="header-subtitle-name">{{userName}}</span></p>
+                </div>
+                <div class="header-logo">
+                    <img src="../../assets/elfie-logo.svg" alt="Elfie Logo">
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <!-- Biological Age Section -->
+            <div class="section-with-icon">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/bio_age_sphere.png" alt="Biological Age">
+                    </div>
+                    <h2 class="section-title">Biological Age</h2>
+                </div>
+                <div class="bio-age-card">
+                    <div class="bio-age-main">
+                        <div class="bio-age-item">
+                            <div class="bio-age-change">
+                                <img src="../../assets/health-report/arrow-down.svg" alt="Down" class="bio-age-change-icon">
+                                <span>{{biologicalAge.change}}</span>
+                            </div>
+                            <div class="bio-age-value">{{biologicalAge.value}}</div>
+                            <div class="bio-age-accuracy">{{biologicalAge.accuracy}}</div>
+                        </div>
+                        <div class="bio-age-item">
+                            <div class="bio-age-label">{{biologicalAge.paceLabel}}</div>
+                            <div class="bio-age-value">{{biologicalAge.paceValue}}</div>
+                        </div>
+                    </div>
+                    <div class="bio-age-description">
+                        <div class="bio-age-description-title">{{biologicalAge.descriptionTitle}}</div>
+                        <a href="#" class="bio-age-description-link">{{biologicalAge.descriptionLink}}</a>
+                        <div class="bio-age-description-text">{{biologicalAge.descriptionText}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality of Life Section -->
+            <div class="section-with-icon">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/sun-icon.png" alt="Quality of Life">
+                    </div>
+                    <h2 class="section-title">Quality of life</h2>
+                </div>
+                <div class="qol-card">
+                    <div class="qol-header">
+                        <div class="qol-score-item">
+                            <div class="qol-label">{{qualityOfLife.scoreLabel}}</div>
+                            <div class="qol-value">{{qualityOfLife.scoreValue}}</div>
+                        </div>
+                        <div class="qol-score-item">
+                            <div class="qol-label">{{qualityOfLife.changeLabel}}</div>
+                            <div class="qol-change">
+                                <img src="../../assets/health-report/arrow-up.svg" alt="Up" class="bio-age-change-icon">
+                                <span>{{qualityOfLife.changeValue}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qol-dimensions">
+                        {{#each qualityOfLife.dimensions}}
+                        <div class="qol-dimension-item">
+                            <div class="qol-dimension-icon">
+                                <img src="../../assets/health-report/{{icon}}.png" alt="{{name}}">
+                            </div>
+                            <div class="qol-dimension-name">{{name}}</div>
+                            <div class="qol-dimension-value">{{value}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="qol-description">
+                        <div class="qol-description-title">{{qualityOfLife.descriptionTitle}}</div>
+                        <a href="#" class="qol-description-link">{{qualityOfLife.descriptionLink}}</a>
+                        <div class="qol-description-text">{{qualityOfLife.descriptionText}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-layout">
+                <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+                <div class="footer-right">Page <span class="page-number">{{page7AltNumber}}</span> of <span class="page-number">{{totalPages}}</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 8: Lab Tests -->
+    <div class="page">
+        <div class="header">
+            <div class="header-layout">
+                <div class="header-left">
+                    <h1 class="header-title">Health Report</h1>
+                    <p class="header-subtitle">Health report of <span class="header-subtitle-name">{{userName}}</span></p>
+                </div>
+                <div class="header-logo">
+                    <img src="../../assets/elfie-logo.svg" alt="Elfie Logo">
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <!-- Lab Tests Section -->
+            <div class="lab-tests-section">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/warning-red.svg" alt="Lab Tests">
+                    </div>
+                    <div style="flex: 1;">
+                        <h2 class="section-title">Lab Test</h2>
+                        <p class="lab-tests-subtitle">{{labTests.subtitle}}</p>
+                    </div>
+                </div>
+
+                <!-- Past Lab Tests -->
+                <div class="lab-tests-table">
+                    <div class="lab-tests-header">
+                        <div class="lab-tests-header-cell">TEST NAME</div>
+                        <div class="lab-tests-header-cell">DESCRIPTION</div>
+                        <div class="lab-tests-header-cell right">DATE</div>
+                    </div>
+                    {{#each labTests.pastTests}}
+                    <div class="lab-tests-row">
+                        <div class="lab-tests-cell">{{testName}}</div>
+                        <div class="lab-tests-cell">{{description}}</div>
+                        <div class="lab-tests-cell right">{{date}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <!-- Recommended Tests -->
+                <div class="lab-tests-section-title">RECOMMENDED</div>
+                <div class="lab-tests-table">
+                    {{#each labTests.recommendedTests}}
+                    <div class="lab-tests-recommended-row">
+                        <div class="lab-tests-recommended-cell">{{testName}}</div>
+                        <div class="lab-tests-recommended-cell right bold">{{dueDate}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-layout">
+                <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+                <div class="footer-right">Page <span class="page-number">{{page8Number}}</span> of <span class="page-number">{{totalPages}}</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
