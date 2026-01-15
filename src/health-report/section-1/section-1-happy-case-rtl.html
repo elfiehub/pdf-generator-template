@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Report - Section 1 Happy Case (RTL)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            direction: rtl;
+        }
+
+        .page {
+            width: 595px;
+            min-height: 842px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            page-break-after: always;
+            direction: rtl;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            padding: 40px 68px 0;
+        }
+
+        .header-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 24px;
+            direction: rtl;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+            text-align: right;
+        }
+
+        .header-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.2;
+            color: #14142b;
+            margin: 0;
+        }
+
+        .header-subtitle {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            margin: 0;
+        }
+
+        .header-subtitle-name {
+            font-weight: 600;
+            color: #14142b;
+        }
+
+        .header-logo {
+            width: 88px;
+            height: 32px;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .header-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #d8dae7;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 24px 68px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Section with Icon */
+        .section-with-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-icon-header {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            direction: rtl;
+        }
+
+        .icon-container {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            order: 2;
+        }
+
+        .icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .section-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            justify-content: center;
+            text-align: right;
+            order: 1;
+        }
+
+        .section-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+            color: #2f324b;
+            margin: 0;
+        }
+
+        .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #4e547d;
+            margin: 0;
+        }
+
+        .section-description {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            margin: 0;
+            text-align: right;
+        }
+
+        .section-list {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            margin: 0;
+            padding-right: 18px;
+            padding-left: 0;
+            text-align: right;
+        }
+
+        .section-list li {
+            margin-bottom: 0;
+        }
+
+        .section-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .list-bold {
+            font-weight: 700;
+        }
+
+        /* Highlighted Box */
+        .highlight-box {
+            background-color: #f5faff;
+            border: 1px solid #0ba5ec;
+            border-right-width: 4px;
+            border-left-width: 1px;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .highlight-box .section-icon-header {
+            gap: 8px;
+        }
+
+        .highlight-box .section-title {
+            font-size: 16px;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background-color: #fff8fa;
+            border: 1px solid #f04438;
+            border-right-width: 4px;
+            border-left-width: 1px;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .warning-box .section-icon-header {
+            gap: 8px;
+        }
+
+        .warning-box .section-title {
+            font-size: 16px;
+        }
+
+        /* Questions Section */
+        .questions-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .question-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            direction: rtl;
+        }
+
+        .checkbox {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #9799bf;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 4px;
+            order: 2;
+        }
+
+        .question-text {
+            flex: 1;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            margin: 0;
+            text-align: right;
+            order: 1;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .questions-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: white;
+            padding: 26px 68px 32px;
+        }
+
+        .footer-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            direction: rtl;
+        }
+
+        .footer-left {
+            flex: 1;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            text-align: right;
+        }
+
+        .footer-right {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        .page-number {
+            color: #4e547d;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 3: Data Context Overview & Health Highlights (RTL) -->
+    <div class="page">
+        <div class="header">
+            <div class="header-layout">
+                <div class="header-logo">
+                    <img src="../../assets/elfie-logo.svg" alt="Elfie Logo">
+                </div>
+                <div class="header-left">
+                    <h1 class="header-title">Health Report</h1>
+                    <p class="header-subtitle">Health report of <span class="header-subtitle-name">{{userName}}</span></p>
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <!-- Data Context Overview -->
+            <div class="section-with-icon">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/data-privacy.svg" alt="Data Privacy">
+                    </div>
+                    <div class="section-info">
+                        <h2 class="section-title">Data context overview</h2>
+                        <p class="section-subtitle">Overview of the available health data and its freshness.</p>
+                    </div>
+                </div>
+                <p class="section-description">{{dataContextDescription}}</p>
+                <ul class="section-list">
+                    {{#each dataContextItems}}
+                    <li><span class="list-bold">{{label}}</span>: {{value}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <!-- Health Highlights -->
+            <div class="highlight-box">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/stars.svg" alt="Stars">
+                    </div>
+                    <div class="section-info">
+                        <h2 class="section-title">Health highlights</h2>
+                        <p class="section-subtitle">Noteworthy stable or positive patterns.</p>
+                    </div>
+                </div>
+                <ul class="section-list">
+                    {{#each healthHighlights}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-layout">
+                <div class="footer-right">Page <span class="page-number">{{page3Number}}</span> of <span class="page-number">{{totalPages}}</span></div>
+                <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Risk Signals & Questions for Doctor (RTL) -->
+    <div class="page">
+        <div class="header">
+            <div class="header-layout">
+                <div class="header-logo">
+                    <img src="../../assets/elfie-logo.svg" alt="Elfie Logo">
+                </div>
+                <div class="header-left">
+                    <h1 class="header-title">Health Report</h1>
+                    <p class="header-subtitle">Health report of <span class="header-subtitle-name">{{userName}}</span></p>
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <!-- Risk Signals -->
+            <div class="warning-box">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/warning-red.svg" alt="Warning">
+                    </div>
+                    <div class="section-info">
+                        <h2 class="section-title">Risk signals</h2>
+                        <p class="section-subtitle">Patterns or findings that may require attention.</p>
+                    </div>
+                </div>
+                <ul class="section-list">
+                    {{#each riskSignals}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <!-- Questions for Doctor -->
+            <div class="questions-section">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/faq.svg" alt="FAQ">
+                    </div>
+                    <div class="section-info">
+                        <h2 class="section-title">Questions for your doctor</h2>
+                        <p class="section-subtitle">Help guide your discussions with a medical professional</p>
+                    </div>
+                </div>
+                <div class="questions-list">
+                    {{#each doctorQuestions}}
+                    <div class="question-item">
+                        <div class="checkbox"></div>
+                        <p class="question-text">{{this}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-layout">
+                <div class="footer-right">Page <span class="page-number">{{page4Number}}</span> of <span class="page-number">{{totalPages}}</span></div>
+                <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

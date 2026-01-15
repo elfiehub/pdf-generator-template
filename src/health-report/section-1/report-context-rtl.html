@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Report - Report Context (RTL)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+
+        .page {
+            width: 595px;
+            min-height: 842px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            page-break-after: always;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            padding: 40px 68px 0;
+        }
+
+        .header-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-direction: row-reverse;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .header-title {
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.2;
+            color: #14142b;
+            margin: 0;
+        }
+
+        .header-subtitle {
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            margin: 0;
+        }
+
+        .header-subtitle-name {
+            font-weight: 600;
+            color: #14142b;
+        }
+
+        .header-logo {
+            width: 88px;
+            height: 32px;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .header-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #d8dae7;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 24px 68px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Section with Icon */
+        .section-with-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-icon-header {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+
+        .icon-container {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .section-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .section-title {
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+            color: #2f324b;
+            margin: 0;
+        }
+
+        .section-subtitle {
+            font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #4e547d;
+            margin: 0;
+        }
+
+        .section-description {
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            margin: 0;
+            text-align: right;
+        }
+
+        .section-paragraphs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-paragraph {
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            margin: 0;
+            text-align: right;
+        }
+
+        /* Questions Section */
+        .questions-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .question-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            flex-direction: row-reverse;
+        }
+
+        .checkbox {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #9799bf;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .question-text {
+            flex: 1;
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #2f324b;
+            margin: 0;
+            text-align: right;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: white;
+            padding: 26px 68px 32px;
+        }
+
+        .footer-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-direction: row-reverse;
+        }
+
+        .footer-left {
+            flex: 1;
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            text-align: right;
+        }
+
+        .footer-right {
+            font-family: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #43476b;
+            white-space: nowrap;
+        }
+
+        .page-number {
+            color: #4e547d;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-layout">
+                <div class="header-left">
+                    <h1 class="header-title">تقرير الصحة</h1>
+                    <p class="header-subtitle">تقرير الصحة الخاص بـ <span class="header-subtitle-name">{{userName}}</span></p>
+                </div>
+                <div class="header-logo">
+                    <img src="../../assets/elfie-logo.svg" alt="Elfie Logo">
+                </div>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <div class="content">
+            <!-- Report Context Section -->
+            <div class="section-with-icon">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/report-context-icon.svg" alt="Report Context">
+                    </div>
+                    <div class="section-info">
+                        <h2 class="section-title">سياق التقرير</h2>
+                        <p class="section-subtitle">نظرة عامة على بيانات الصحة المتاحة وحداثتها.</p>
+                    </div>
+                </div>
+                <div class="section-paragraphs">
+                    {{#each reportContextParagraphs}}
+                    <p class="section-paragraph">{{this}}</p>
+                    {{/each}}
+                </div>
+            </div>
+
+            <!-- Questions for Doctor Section -->
+            <div class="questions-section">
+                <div class="section-icon-header">
+                    <div class="icon-container">
+                        <img src="../../assets/health-report/faq.svg" alt="Questions">
+                    </div>
+                    <div class="section-info">
+                        <h2 class="section-title">أسئلة لطبيبك</h2>
+                        <p class="section-subtitle">ساعد في توجيه مناقشاتك مع أخصائي طبي</p>
+                    </div>
+                </div>
+                <div class="questions-list">
+                    {{#each questionsForDoctor}}
+                    <div class="question-item">
+                        <div class="checkbox"></div>
+                        <p class="question-text">{{this}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-layout">
+                <div class="footer-left">{{reportDate}} • {{footerText}}</div>
+                <div class="footer-right">صفحة <span class="page-number">{{currentPage}}</span> من <span class="page-number">{{totalPages}}</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
