@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Report - Section 3 Cover</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans:wght@400;600;700&display=swap");
+
+      .section-3-cover {
+        width: 595px;
+        min-height: 842px;
+        background-color: #f0f2ff;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .section-3-header {
+        padding: 40px 68px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .header-left {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .header-title {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #14142b;
+      }
+
+      .header-subtitle {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+      }
+
+      .header-subtitle-name {
+        font-weight: 600;
+        color: #14142b;
+      }
+
+      .header-logo {
+        width: 88px;
+        height: 32px;
+      }
+
+      .header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .section-3-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 68px;
+        gap: 40px;
+      }
+
+      .main-title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        max-width: 459px;
+      }
+
+      .main-title-line {
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: 1;
+        color: #14142b;
+        text-align: left;
+        margin: 0;
+      }
+
+      .sections-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        max-width: 459px;
+      }
+
+      .section-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .section-name {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #14142b;
+        white-space: nowrap;
+      }
+
+      .section-dots {
+        flex: 1;
+        height: 0;
+        border-top: 1px dashed #d8d9e8;
+        min-width: 20px;
+      }
+
+      .section-page {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #4e547d;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .section-arrow {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .section-arrow svg {
+        width: 100%;
+        height: 100%;
+        stroke: #7d7fad;
+      }
+
+      .section-3-footer {
+        padding: 26px 68px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .footer-left {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+      }
+
+      .footer-right {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #43476b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section-3-cover" dir="ltr">
+      <div class="section-3-header">
+        <div class="header-left">
+          <h1 class="header-title">Health Report</h1>
+          <p class="header-subtitle">
+            Health report of <span class="header-subtitle-name">{{name}}</span>
+          </p>
+        </div>
+        <div class="header-logo">
+          <img src="../../assets/elfie-logo.svg" alt="Elfie Logo" />
+        </div>
+      </div>
+
+      <div class="section-3-content">
+        <div class="main-title">
+          <h2 class="main-title-line">Medications</h2>
+          <h2 class="main-title-line">& Adherence</h2>
+        </div>
+
+        <div class="sections-list">
+          <div class="section-item">
+            <span class="section-name">{{activeMedicationsName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              Page {{activeMedicationsPage}}
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-item">
+            <span class="section-name">{{inactiveMedicationsName}}</span>
+            <div class="section-dots"></div>
+            <div class="section-page">
+              Page {{inactiveMedicationsPage}}
+              <div class="section-arrow">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-3-footer">
+        <div class="footer-left">{{footerDate}} • {{footerText}}</div>
+        <div class="footer-right">Page {{currentPage}} of {{totalPages}}</div>
+      </div>
+    </div>
+  </body>
+</html>
